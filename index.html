@@ -224,11 +224,17 @@ footer a:hover{color:#fff}
   .details{padding:30px 20px 40px;overflow:visible}
   form{grid-template-columns:1fr}
 }
+.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:40px;padding:3px}
+.langs button{font-size:12px;font-weight:500;letter-spacing:.06em;padding:6px 10px;border-radius:40px;color:var(--muted);transition:.2s}
+.langs button:hover{color:var(--ink)}
+.langs button.on{background:var(--ink);color:#fff}
+.nav-right{display:flex;align-items:center;gap:14px}
+@media (max-width:900px){.langs button{padding:5px 7px;font-size:11px}.nav-right{gap:12px}.logo{font-size:19px;letter-spacing:.2em;gap:7px}.logo svg{width:18px;height:18px}}
 </style>
 </head>
 <body>
 
-<div class="topbar">Yangi qish kolleksiyasi 2026 — tabiiy mo'ynali yoqalar bilan</div>
+<div class="topbar" data-i18n="topbar"></div>
 
 <header>
   <div class="wrap nav">
@@ -237,40 +243,45 @@ footer a:hover{color:#fff}
       NAZZARO
     </a>
     <nav class="menu" id="menu">
-      <a href="#kolleksiya">Kolleksiya</a>
-      <a href="#buyurtma">Individual buyurtma</a>
-      <a href="#materiallar">Materiallar</a>
-      <a href="#biz-haqimizda">Biz haqimizda</a>
-      <a href="#aloqa">Aloqa</a>
+      <a href="#kolleksiya" data-i18n="nav_collection"></a>
+      <a href="#buyurtma" data-i18n="nav_custom"></a>
+      <a href="#materiallar" data-i18n="nav_materials"></a>
+      <a href="#biz-haqimizda" data-i18n="nav_about"></a>
+      <a href="#aloqa" data-i18n="nav_contact"></a>
     </nav>
-    <a href="#aloqa" class="nav-cta">Uchrashuv belgilash</a>
-    <button class="burger" id="burger" aria-label="Menyu"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <div class="langs" id="langs">
+        <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
+      </div>
+      <a href="#aloqa" class="nav-cta" data-i18n="cta_book"></a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
 <main id="top">
   <section class="hero">
     <div class="hero-text reveal">
-      <div class="eyebrow">Kuz — Qish 2026</div>
-      <h1>Sovuqda ham <em>klassik</em> ko'rinish</h1>
-      <p class="lead">Tabiiy charm va yumshoq zamshdan tikilgan, haqiqiy mo'yna yoqali erkaklar kurtka va paltolari. Tayyor modellar yoki aynan sizning o'lchamingizga.</p>
+      <div class="eyebrow" data-i18n="hero_eyebrow"></div>
+      <h1 data-i18n-html="hero_title"></h1>
+      <p class="lead" data-i18n="hero_lead"></p>
       <div class="btns">
-        <a href="#kolleksiya" class="btn btn-dark">Kolleksiyani ko'rish →</a>
-        <a href="#buyurtma" class="btn btn-line">Individual buyurtma</a>
+        <a href="#kolleksiya" class="btn btn-dark" data-i18n="hero_btn1"></a>
+        <a href="#buyurtma" class="btn btn-line" data-i18n="nav_custom"></a>
       </div>
     </div>
     <div class="hero-img">
-      <img src="img/151.jpg" alt="NAZZARO charm kurtka, mo'yna yoqali">
-      <div class="hero-tag">Yangi model<b>N-151 Charm kurtka</b></div>
+      <img src="img/151.jpg" alt="NAZZARO N-151">
+      <div class="hero-tag"><span data-i18n="hero_tag"></span><b data-i18n="hero_tag_name"></b></div>
     </div>
   </section>
 
   <div class="strip">
     <div class="wrap">
-      <div class="item"><b>Tabiiy materiallar</b>Charm, zamsh, mo'yna</div>
-      <div class="item"><b>Individual o'lchov</b>Do'konda bepul</div>
-      <div class="item"><b>Kafolat</b>Sifatga to'liq javob beramiz</div>
-      <div class="item"><b>Yetkazib berish</b>O'zbekiston bo'ylab</div>
+      <div class="item"><b data-i18n="f1_t"></b><span data-i18n="f1_d"></span></div>
+      <div class="item"><b data-i18n="f2_t"></b><span data-i18n="f2_d"></span></div>
+      <div class="item"><b data-i18n="f3_t"></b><span data-i18n="f3_d"></span></div>
+      <div class="item"><b data-i18n="f4_t"></b><span data-i18n="f4_d"></span></div>
     </div>
   </div>
 
@@ -278,15 +289,15 @@ footer a:hover{color:#fff}
     <div class="wrap">
       <div class="head reveal">
         <div>
-          <div class="eyebrow">Kolleksiya</div>
-          <h2>Erkaklar ustki kiyimlari</h2>
+          <div class="eyebrow" data-i18n="nav_collection"></div>
+          <h2 data-i18n="col_title"></h2>
         </div>
         <div class="filters" id="filters">
-          <button class="chip active" data-f="all">Hammasi</button>
-          <button class="chip" data-f="charm">Charm</button>
-          <button class="chip" data-f="zamsh">Zamsh</button>
-          <button class="chip" data-f="palto">Paltolar</button>
-          <button class="chip" data-f="kurtka">Kurtkalar</button>
+          <button class="chip active" data-f="all" data-i18n="flt_all"></button>
+          <button class="chip" data-f="charm" data-i18n="flt_leather"></button>
+          <button class="chip" data-f="zamsh" data-i18n="flt_suede"></button>
+          <button class="chip" data-f="palto" data-i18n="flt_coats"></button>
+          <button class="chip" data-f="kurtka" data-i18n="flt_jackets"></button>
         </div>
       </div>
       <div class="grid" id="grid"></div>
@@ -295,18 +306,18 @@ footer a:hover{color:#fff}
 
   <section class="block custom" id="buyurtma">
     <div class="wrap custom-grid">
-      <div class="custom-img reveal"><img src="img/001-b.jpg" alt="Individual buyurtma — zamsh palto"></div>
+      <div class="custom-img reveal"><img src="img/001-b.jpg" alt="NAZZARO made to measure"></div>
       <div class="reveal">
         <div class="eyebrow">Made to measure</div>
-        <h2>Aynan siz uchun tikilgan</h2>
-        <p class="sub" style="margin-top:16px">Har qanday modelni o'z o'lchamingiz, rangingiz va mo'yna turingiz bilan buyurtma qiling. Jarayon oddiy — to'rt qadam.</p>
+        <h2 data-i18n="cm_title"></h2>
+        <p class="sub" style="margin-top:16px" data-i18n="cm_sub"></p>
         <div class="steps">
-          <div class="step"><div class="n">01</div><div><h3>Modelni tanlang</h3><p>Kolleksiyadagi istalgan kurtka yoki paltoni asos qilib oling.</p></div></div>
-          <div class="step"><div class="n">02</div><div><h3>O'lchov oling</h3><p>Mutaxassisimiz do'konda aniq o'lchovlarni bepul oladi.</p></div></div>
-          <div class="step"><div class="n">03</div><div><h3>Materialni belgilang</h3><p>Charm yoki zamsh, rang, yoqa va manjet uchun mo'yna turini tanlang.</p></div></div>
-          <div class="step"><div class="n">04</div><div><h3>Tayyor buyumni oling</h3><p>Kiyib ko'rish va kerakli tuzatishlardan so'ng sizga topshiramiz.</p></div></div>
+          <div class="step"><div class="n">01</div><div><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div></div>
+          <div class="step"><div class="n">02</div><div><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div></div>
+          <div class="step"><div class="n">03</div><div><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div></div>
+          <div class="step"><div class="n">04</div><div><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div></div>
         </div>
-        <a href="#aloqa" class="btn btn-dark">Uchrashuv belgilash →</a>
+        <a href="#aloqa" class="btn btn-dark" data-i18n="cta_book_arrow"></a>
       </div>
     </div>
   </section>
@@ -314,13 +325,13 @@ footer a:hover{color:#fff}
   <section class="block" id="materiallar">
     <div class="wrap">
       <div class="head reveal">
-        <div><div class="eyebrow">Materiallar</div><h2>Sifat tafsilotlarda</h2></div>
-        <p class="sub">Har bir buyum uchun materiallar alohida saralanadi — shuning uchun NAZZARO yillar davomida shaklini yo'qotmaydi.</p>
+        <div><div class="eyebrow" data-i18n="nav_materials"></div><h2 data-i18n="mat_title"></h2></div>
+        <p class="sub" data-i18n="mat_sub"></p>
       </div>
       <div class="mat-grid">
-        <div class="mat reveal"><img src="img/131.jpg" alt="Tabiiy charm"><div class="t"><h3>Tabiiy charm</h3><p>Yumshoq, elastik va vaqt o'tgan sari yanada chiroyli.</p></div></div>
-        <div class="mat reveal"><img src="img/043.jpg" alt="Zamsh"><div class="t"><h3>Zamsh</h3><p>Baxmaldek yuza, issiq va yengil.</p></div></div>
-        <div class="mat reveal"><img src="img/141.jpg" alt="Mo'yna yoqa"><div class="t"><h3>Mo'yna yoqa</h3><p>Sovuq kunlarda bo'yin va yuzni himoya qiladi.</p></div></div>
+        <div class="mat reveal"><img src="img/131.jpg" alt=""><div class="t"><h3 data-i18n="m1_t"></h3><p data-i18n="m1_d"></p></div></div>
+        <div class="mat reveal"><img src="img/043.jpg" alt=""><div class="t"><h3 data-i18n="m2_t"></h3><p data-i18n="m2_d"></p></div></div>
+        <div class="mat reveal"><img src="img/141.jpg" alt=""><div class="t"><h3 data-i18n="m3_t"></h3><p data-i18n="m3_d"></p></div></div>
       </div>
     </div>
   </section>
@@ -328,19 +339,19 @@ footer a:hover{color:#fff}
   <section class="block" id="biz-haqimizda" style="padding-top:0">
     <div class="wrap about">
       <div class="reveal">
-        <div class="eyebrow">Biz haqimizda</div>
-        <h2>NAZZARO — erkaklar uchun klassika</h2>
-        <p style="margin-top:20px">NAZZARO — erkaklar ustki kiyimlariga ixtisoslashgan brend. Biz klassik bichim, sifatli material va qo'l mehnati uyg'unligiga ishonamiz.</p>
-        <p>Kolleksiyamizdagi har bir model biznes uslubiga ham, kundalik kiyinishga ham mos keladi: kostyum ustidan ham, sviter bilan ham birdek chiroyli.</p>
+        <div class="eyebrow" data-i18n="nav_about"></div>
+        <h2 data-i18n="ab_title"></h2>
+        <p style="margin-top:20px" data-i18n="ab_p1"></p>
+        <p data-i18n="ab_p2"></p>
         <div class="stats">
-          <div><b>100%</b><span>Tabiiy materiallar</span></div>
-          <div><b>46–60</b><span>O'lchamlar qatori</span></div>
-          <div><b>4</b><span>Asosiy rang</span></div>
+          <div><b>100%</b><span data-i18n="st1"></span></div>
+          <div><b>46–60</b><span data-i18n="st2"></span></div>
+          <div><b>4</b><span data-i18n="st3"></span></div>
         </div>
       </div>
       <div class="about-imgs reveal">
-        <img src="img/001-c.jpg" alt="NAZZARO do'koni">
-        <img src="img/003-b.jpg" alt="Jigarrang zamsh palto">
+        <img src="img/001-c.jpg" alt="">
+        <img src="img/003-b.jpg" alt="">
       </div>
     </div>
   </section>
@@ -348,30 +359,30 @@ footer a:hover{color:#fff}
   <section class="block contact" id="aloqa">
     <div class="wrap contact-grid">
       <div class="reveal">
-        <div class="eyebrow">Aloqa</div>
-        <h2>Uchrashuv belgilang</h2>
-        <p class="sub" style="margin-top:16px">Ariza qoldiring — menejerimiz siz bilan bog'lanib, qulay vaqtni kelishib oladi.</p>
+        <div class="eyebrow" data-i18n="nav_contact"></div>
+        <h2 data-i18n="ct_title"></h2>
+        <p class="sub" style="margin-top:16px" data-i18n="ct_sub"></p>
         <div style="margin-top:30px">
-          <div class="info-row"><small>Telefon</small><span>+998 (__) ___-__-__</span></div>
+          <div class="info-row"><small data-i18n="ct_phone"></small><span>+998 (__) ___-__-__</span></div>
           <div class="info-row"><small>Telegram</small><span>@nazzaro_uz</span></div>
-          <div class="info-row"><small>Manzil</small><span>Toshkent sh., do'kon manzili</span></div>
-          <div class="info-row"><small>Ish vaqti</small><span>Har kuni 10:00 — 20:00</span></div>
+          <div class="info-row"><small data-i18n="ct_addr"></small><span data-i18n="ct_addr_v"></span></div>
+          <div class="info-row"><small data-i18n="ct_hours"></small><span data-i18n="ct_hours_v"></span></div>
         </div>
       </div>
       <form id="form" class="reveal" novalidate>
-        <div class="field"><label for="f-name">Ismingiz</label><input id="f-name" required placeholder="Ism Familiya"></div>
-        <div class="field"><label for="f-phone">Telefon</label><input id="f-phone" type="tel" required placeholder="+998 90 123 45 67"></div>
-        <div class="field"><label for="f-model">Model</label><select id="f-model"></select></div>
-        <div class="field"><label for="f-size">O'lcham</label><select id="f-size"><option value="">Bilmayman — o'lchov kerak</option></select></div>
-        <div class="field full"><label for="f-type">Xizmat turi</label><select id="f-type"><option>Tayyor modelni xarid qilish</option><option>Individual buyurtma (o'lchov bilan)</option><option>Maslahat olish</option></select></div>
-        <div class="field full"><label for="f-msg">Izoh</label><textarea id="f-msg" placeholder="Rang, mo'yna turi yoki boshqa istaklaringiz"></textarea></div>
-        <div class="field full"><button class="btn btn-light" type="submit">Ariza tayyorlash →</button></div>
+        <div class="field"><label for="f-name" data-i18n="fm_name"></label><input id="f-name" required data-i18n-ph="fm_name_ph"></div>
+        <div class="field"><label for="f-phone" data-i18n="ct_phone"></label><input id="f-phone" type="tel" required placeholder="+998 90 123 45 67"></div>
+        <div class="field"><label for="f-model" data-i18n="fm_model"></label><select id="f-model"></select></div>
+        <div class="field"><label for="f-size" data-i18n="fm_size"></label><select id="f-size"></select></div>
+        <div class="field full"><label for="f-type" data-i18n="fm_type"></label><select id="f-type"></select></div>
+        <div class="field full"><label for="f-msg" data-i18n="fm_msg"></label><textarea id="f-msg" data-i18n-ph="fm_msg_ph"></textarea></div>
+        <div class="field full"><button class="btn btn-light" type="submit" data-i18n="fm_submit"></button></div>
         <div class="result" id="result">
-          Arizangiz tayyor. Uni Telegram orqali yuboring yoki nusxa oling:
+          <span data-i18n="fm_ready"></span>
           <pre id="result-text"></pre>
           <div class="acts">
-            <a id="tg-link" href="#" target="_blank" rel="noopener">Telegram orqali yuborish</a>
-            <button type="button" id="copy-btn">Nusxa olish</button>
+            <a id="tg-link" href="#" target="_blank" rel="noopener" data-i18n="fm_tg"></a>
+            <button type="button" id="copy-btn" data-i18n="fm_copy"></button>
           </div>
         </div>
       </form>
@@ -384,20 +395,20 @@ footer a:hover{color:#fff}
     <div class="foot">
       <div>
         <div class="logo"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 22V5l16 16V4"/></svg>NAZZARO</div>
-        <p style="max-width:300px">Erkaklar uchun charm va zamsh kurtka hamda paltolar. Klassik bichim, tabiiy materiallar.</p>
+        <p style="max-width:300px" data-i18n="ft_about"></p>
       </div>
-      <div><h4>Kolleksiya</h4><ul><li><a href="#kolleksiya" data-go="charm">Charm</a></li><li><a href="#kolleksiya" data-go="zamsh">Zamsh</a></li><li><a href="#kolleksiya" data-go="palto">Paltolar</a></li><li><a href="#kolleksiya" data-go="kurtka">Kurtkalar</a></li></ul></div>
-      <div><h4>Xizmatlar</h4><ul><li><a href="#buyurtma">Individual buyurtma</a></li><li><a href="#aloqa">O'lchov olish</a></li><li><a href="#aloqa">Maslahat</a></li></ul></div>
-      <div><h4>Ijtimoiy tarmoqlar</h4><ul><li><a href="#aloqa">Telegram</a></li><li><a href="#aloqa">Instagram</a></li></ul></div>
+      <div><h4 data-i18n="nav_collection"></h4><ul><li><a href="#kolleksiya" data-go="charm" data-i18n="flt_leather"></a></li><li><a href="#kolleksiya" data-go="zamsh" data-i18n="flt_suede"></a></li><li><a href="#kolleksiya" data-go="palto" data-i18n="flt_coats"></a></li><li><a href="#kolleksiya" data-go="kurtka" data-i18n="flt_jackets"></a></li></ul></div>
+      <div><h4 data-i18n="ft_services"></h4><ul><li><a href="#buyurtma" data-i18n="nav_custom"></a></li><li><a href="#aloqa" data-i18n="ft_measure"></a></li><li><a href="#aloqa" data-i18n="ft_consult"></a></li></ul></div>
+      <div><h4 data-i18n="ft_social"></h4><ul><li><a href="#aloqa">Telegram</a></li><li><a href="#aloqa">Instagram</a></li></ul></div>
     </div>
-    <div class="copy"><span>© 2026 NAZZARO. Barcha huquqlar himoyalangan.</span><span>Toshkent, O'zbekiston</span></div>
+    <div class="copy"><span data-i18n="ft_rights"></span><span data-i18n="ft_city"></span></div>
   </div>
 </footer>
 
 <div class="modal" id="modal" aria-hidden="true">
   <div class="backdrop" data-close></div>
   <div class="panel" role="dialog" aria-modal="true">
-    <button class="close" data-close aria-label="Yopish">×</button>
+    <button class="close" data-close aria-label="Close">×</button>
     <div class="gallery">
       <div class="big"><img id="m-big" alt=""></div>
       <div class="thumbs" id="m-thumbs"></div>
@@ -406,143 +417,271 @@ footer a:hover{color:#fff}
       <div class="code" id="m-code"></div>
       <h3 id="m-name"></h3>
       <p class="desc" id="m-desc"></p>
-      <div class="opt-label">Rang <span id="m-color-name"></span></div>
+      <div class="opt-label"><span style="color:inherit;letter-spacing:.12em;text-transform:uppercase" data-i18n="md_color"></span> <span id="m-color-name"></span></div>
       <div class="colors" id="m-colors"></div>
-      <div class="opt-label">O'lcham <span>Aniq o'lcham uchun do'konga keling</span></div>
+      <div class="opt-label"><span style="color:inherit;letter-spacing:.12em;text-transform:uppercase" data-i18n="md_size"></span> <span data-i18n="md_size_hint"></span></div>
       <div class="sizes" id="m-sizes"></div>
-      <div class="hint" id="m-hint">Iltimos, o'lchamni tanlang</div>
-      <button class="btn btn-dark" id="m-order">Buyurtma berish</button>
-      <button class="btn btn-line" id="m-custom">Individual o'lchov bilan</button>
+      <div class="hint" id="m-hint" data-i18n="md_pick"></div>
+      <button class="btn btn-dark" id="m-order" data-i18n="md_order"></button>
+      <button class="btn btn-line" id="m-custom" data-i18n="md_custom"></button>
       <ul class="spec" id="m-spec"></ul>
     </div>
   </div>
 </div>
 
 <script>
+const T={
+uz:{
+ title:"NAZZARO — Erkaklar ustki kiyimlari",
+ topbar:"Yangi qish kolleksiyasi 2026 — tabiiy mo'ynali yoqalar bilan",
+ nav_collection:"Kolleksiya",nav_custom:"Individual buyurtma",nav_materials:"Materiallar",nav_about:"Biz haqimizda",nav_contact:"Aloqa",
+ cta_book:"Uchrashuv belgilash",cta_book_arrow:"Uchrashuv belgilash →",
+ hero_eyebrow:"Kuz — Qish 2026",hero_title:"Sovuqda ham <em>klassik</em> ko'rinish",
+ hero_lead:"Tabiiy charm va yumshoq zamshdan tikilgan, haqiqiy mo'yna yoqali erkaklar kurtka va paltolari. Tayyor modellar yoki aynan sizning o'lchamingizga.",
+ hero_btn1:"Kolleksiyani ko'rish →",hero_tag:"Yangi model",hero_tag_name:"N-151 Charm kurtka",
+ f1_t:"Tabiiy materiallar",f1_d:"Charm, zamsh, mo'yna",f2_t:"Individual o'lchov",f2_d:"Do'konda bepul",f3_t:"Kafolat",f3_d:"Sifatga to'liq javob beramiz",f4_t:"Yetkazib berish",f4_d:"O'zbekiston bo'ylab",
+ col_title:"Erkaklar ustki kiyimlari",flt_all:"Hammasi",flt_leather:"Charm",flt_suede:"Zamsh",flt_coats:"Paltolar",flt_jackets:"Kurtkalar",
+ card_more:"Batafsil ko'rish",card_model:"Model",
+ cm_title:"Aynan siz uchun tikilgan",cm_sub:"Har qanday modelni o'z o'lchamingiz, rangingiz va mo'yna turingiz bilan buyurtma qiling. Jarayon oddiy — to'rt qadam.",
+ s1_t:"Modelni tanlang",s1_d:"Kolleksiyadagi istalgan kurtka yoki paltoni asos qilib oling.",
+ s2_t:"O'lchov oling",s2_d:"Mutaxassisimiz do'konda aniq o'lchovlarni bepul oladi.",
+ s3_t:"Materialni belgilang",s3_d:"Charm yoki zamsh, rang, yoqa va manjet uchun mo'yna turini tanlang.",
+ s4_t:"Tayyor buyumni oling",s4_d:"Kiyib ko'rish va kerakli tuzatishlardan so'ng sizga topshiramiz.",
+ mat_title:"Sifat tafsilotlarda",mat_sub:"Har bir buyum uchun materiallar alohida saralanadi — shuning uchun NAZZARO yillar davomida shaklini yo'qotmaydi.",
+ m1_t:"Tabiiy charm",m1_d:"Yumshoq, elastik va vaqt o'tgan sari yanada chiroyli.",m2_t:"Zamsh",m2_d:"Baxmaldek yuza, issiq va yengil.",m3_t:"Mo'yna yoqa",m3_d:"Sovuq kunlarda bo'yin va yuzni himoya qiladi.",
+ ab_title:"NAZZARO — erkaklar uchun klassika",
+ ab_p1:"NAZZARO — erkaklar ustki kiyimlariga ixtisoslashgan brend. Biz klassik bichim, sifatli material va qo'l mehnati uyg'unligiga ishonamiz.",
+ ab_p2:"Kolleksiyamizdagi har bir model biznes uslubiga ham, kundalik kiyinishga ham mos keladi: kostyum ustidan ham, sviter bilan ham birdek chiroyli.",
+ st1:"Tabiiy materiallar",st2:"O'lchamlar qatori",st3:"Asosiy rang",
+ ct_title:"Uchrashuv belgilang",ct_sub:"Ariza qoldiring — menejerimiz siz bilan bog'lanib, qulay vaqtni kelishib oladi.",
+ ct_phone:"Telefon",ct_addr:"Manzil",ct_addr_v:"Toshkent sh., do'kon manzili",ct_hours:"Ish vaqti",ct_hours_v:"Har kuni 10:00 — 20:00",
+ fm_name:"Ismingiz",fm_name_ph:"Ism Familiya",fm_model:"Model",fm_size:"O'lcham",fm_type:"Xizmat turi",fm_msg:"Izoh",fm_msg_ph:"Rang, mo'yna turi yoki boshqa istaklaringiz",
+ fm_submit:"Ariza tayyorlash →",fm_ready:"Arizangiz tayyor. Uni Telegram orqali yuboring yoki nusxa oling:",fm_tg:"Telegram orqali yuborish",fm_copy:"Nusxa olish",fm_copied:"Nusxa olindi ✓",fm_copy_fail:"Matnni qo'lda belgilang",
+ fm_no_model:"Hali tanlamadim",fm_no_size:"Bilmayman — o'lchov kerak",
+ types:["Tayyor modelni xarid qilish","Individual buyurtma (o'lchov bilan)","Maslahat olish"],
+ msg_head:"NAZZARO — yangi ariza",msg_name:"Ism",msg_model:"Model",msg_size:"O'lcham",msg_type:"Xizmat",msg_note:"Izoh",msg_none:"tanlanmagan",msg_measure:"o'lchov kerak",
+ ft_about:"Erkaklar uchun charm va zamsh kurtka hamda paltolar. Klassik bichim, tabiiy materiallar.",
+ ft_services:"Xizmatlar",ft_measure:"O'lchov olish",ft_consult:"Maslahat",ft_social:"Ijtimoiy tarmoqlar",ft_rights:"© 2026 NAZZARO. Barcha huquqlar himoyalangan.",ft_city:"Toshkent, O'zbekiston",
+ md_color:"Rang",md_size:"O'lcham",md_size_hint:"Aniq o'lcham uchun do'konga keling",md_pick:"Iltimos, o'lchamni tanlang",md_order:"Buyurtma berish",md_custom:"Individual o'lchov bilan",
+ sp_material:"Material",sp_collar:"Yoqa",sp_fast:"Yopilishi",sp_sizes:"O'lchamlar",
+ colors:{black:"Qora",brown:"To'q jigarrang",navy:"To'q ko'k"},
+ badges:{new:"Yangi",c3:"3 rang",best:"Bestseller"}
+},
+ru:{
+ title:"NAZZARO — Мужская верхняя одежда",
+ topbar:"Новая зимняя коллекция 2026 — с натуральными меховыми воротниками",
+ nav_collection:"Коллекция",nav_custom:"Индивидуальный пошив",nav_materials:"Материалы",nav_about:"О нас",nav_contact:"Контакты",
+ cta_book:"Записаться",cta_book_arrow:"Записаться на примерку →",
+ hero_eyebrow:"Осень — Зима 2026",hero_title:"<em>Классика</em>, которой не страшен холод",
+ hero_lead:"Мужские куртки и пальто из натуральной кожи и мягкой замши с воротниками из натурального меха. Готовые модели или пошив точно по вашим меркам.",
+ hero_btn1:"Смотреть коллекцию →",hero_tag:"Новинка",hero_tag_name:"N-151 Кожаная куртка",
+ f1_t:"Натуральные материалы",f1_d:"Кожа, замша, мех",f2_t:"Индивидуальные мерки",f2_d:"Бесплатно в магазине",f3_t:"Гарантия",f3_d:"Полностью отвечаем за качество",f4_t:"Доставка",f4_d:"По всему Узбекистану",
+ col_title:"Мужская верхняя одежда",flt_all:"Все",flt_leather:"Кожа",flt_suede:"Замша",flt_coats:"Пальто",flt_jackets:"Куртки",
+ card_more:"Подробнее",card_model:"Модель",
+ cm_title:"Сшито специально для вас",cm_sub:"Закажите любую модель по своим меркам, в нужном цвете и с выбранным мехом. Всё просто — четыре шага.",
+ s1_t:"Выберите модель",s1_d:"Возьмите за основу любую куртку или пальто из коллекции.",
+ s2_t:"Снимите мерки",s2_d:"Наш специалист бесплатно снимет точные мерки в магазине.",
+ s3_t:"Выберите материалы",s3_d:"Кожа или замша, цвет, мех для воротника и манжет.",
+ s4_t:"Получите готовое изделие",s4_d:"После примерки и необходимой подгонки мы передадим его вам.",
+ mat_title:"Качество в деталях",mat_sub:"Материалы для каждого изделия отбираются отдельно — поэтому NAZZARO годами сохраняет форму.",
+ m1_t:"Натуральная кожа",m1_d:"Мягкая, эластичная и с годами становится только красивее.",m2_t:"Замша",m2_d:"Бархатистая поверхность, тёплая и лёгкая.",m3_t:"Меховой воротник",m3_d:"Защищает шею и лицо в морозные дни.",
+ ab_title:"NAZZARO — классика для мужчин",
+ ab_p1:"NAZZARO — бренд, специализирующийся на мужской верхней одежде. Мы верим в сочетание классического кроя, качественных материалов и ручной работы.",
+ ab_p2:"Каждая модель коллекции подходит и для делового стиля, и для повседневной носки: одинаково хорошо смотрится поверх костюма и со свитером.",
+ st1:"Натуральные материалы",st2:"Размерный ряд",st3:"Основных цвета",
+ ct_title:"Запишитесь на визит",ct_sub:"Оставьте заявку — менеджер свяжется с вами и согласует удобное время.",
+ ct_phone:"Телефон",ct_addr:"Адрес",ct_addr_v:"г. Ташкент, адрес магазина",ct_hours:"Часы работы",ct_hours_v:"Ежедневно 10:00 — 20:00",
+ fm_name:"Ваше имя",fm_name_ph:"Имя Фамилия",fm_model:"Модель",fm_size:"Размер",fm_type:"Тип услуги",fm_msg:"Комментарий",fm_msg_ph:"Цвет, вид меха или другие пожелания",
+ fm_submit:"Сформировать заявку →",fm_ready:"Заявка готова. Отправьте её через Telegram или скопируйте:",fm_tg:"Отправить в Telegram",fm_copy:"Копировать",fm_copied:"Скопировано ✓",fm_copy_fail:"Выделите текст вручную",
+ fm_no_model:"Ещё не выбрал",fm_no_size:"Не знаю — нужны мерки",
+ types:["Покупка готовой модели","Индивидуальный пошив (с мерками)","Консультация"],
+ msg_head:"NAZZARO — новая заявка",msg_name:"Имя",msg_model:"Модель",msg_size:"Размер",msg_type:"Услуга",msg_note:"Комментарий",msg_none:"не выбрана",msg_measure:"нужны мерки",
+ ft_about:"Мужские кожаные и замшевые куртки и пальто. Классический крой, натуральные материалы.",
+ ft_services:"Услуги",ft_measure:"Снятие мерок",ft_consult:"Консультация",ft_social:"Соцсети",ft_rights:"© 2026 NAZZARO. Все права защищены.",ft_city:"Ташкент, Узбекистан",
+ md_color:"Цвет",md_size:"Размер",md_size_hint:"Для точного размера приходите в магазин",md_pick:"Пожалуйста, выберите размер",md_order:"Оформить заказ",md_custom:"Пошив по меркам",
+ sp_material:"Материал",sp_collar:"Воротник",sp_fast:"Застёжка",sp_sizes:"Размеры",
+ colors:{black:"Чёрный",brown:"Тёмно-коричневый",navy:"Тёмно-синий"},
+ badges:{new:"Новинка",c3:"3 цвета",best:"Бестселлер"}
+},
+en:{
+ title:"NAZZARO — Men's Outerwear",
+ topbar:"New Winter Collection 2026 — with natural fur collars",
+ nav_collection:"Collection",nav_custom:"Made to measure",nav_materials:"Materials",nav_about:"About",nav_contact:"Contact",
+ cta_book:"Book a fitting",cta_book_arrow:"Book a fitting →",
+ hero_eyebrow:"Fall — Winter 2026",hero_title:"<em>Classic</em> style, even in the cold",
+ hero_lead:"Men's jackets and coats in natural leather and soft suede, finished with genuine fur collars. Ready to wear, or made to your exact measurements.",
+ hero_btn1:"Shop the collection →",hero_tag:"New arrival",hero_tag_name:"N-151 Leather jacket",
+ f1_t:"Natural materials",f1_d:"Leather, suede, fur",f2_t:"Personal fitting",f2_d:"Free in store",f3_t:"Guarantee",f3_d:"We stand behind our quality",f4_t:"Delivery",f4_d:"Across Uzbekistan",
+ col_title:"Men's outerwear",flt_all:"All",flt_leather:"Leather",flt_suede:"Suede",flt_coats:"Coats",flt_jackets:"Jackets",
+ card_more:"View details",card_model:"Model",
+ cm_title:"Made just for you",cm_sub:"Order any model in your size, colour and choice of fur. It's simple — four steps.",
+ s1_t:"Choose a model",s1_d:"Start from any jacket or coat in the collection.",
+ s2_t:"Get measured",s2_d:"Our specialist takes your exact measurements in store, free of charge.",
+ s3_t:"Pick your materials",s3_d:"Leather or suede, colour, and fur for the collar and cuffs.",
+ s4_t:"Collect your piece",s4_d:"After a fitting and any adjustments, it's ready for you.",
+ mat_title:"Quality in the details",mat_sub:"Materials are selected piece by piece — which is why NAZZARO keeps its shape for years.",
+ m1_t:"Natural leather",m1_d:"Soft, supple, and only gets better with time.",m2_t:"Suede",m2_d:"Velvety surface, warm and light.",m3_t:"Fur collar",m3_d:"Shields your neck and face on frosty days.",
+ ab_title:"NAZZARO — classics for men",
+ ab_p1:"NAZZARO is a brand dedicated to men's outerwear. We believe in the balance of classic tailoring, quality materials and handcraft.",
+ ab_p2:"Every model works for both business and everyday wear — equally sharp over a suit or with a sweater.",
+ st1:"Natural materials",st2:"Size range",st3:"Core colours",
+ ct_title:"Book a visit",ct_sub:"Leave a request — our manager will contact you to arrange a convenient time.",
+ ct_phone:"Phone",ct_addr:"Address",ct_addr_v:"Tashkent, store address",ct_hours:"Opening hours",ct_hours_v:"Daily 10:00 — 20:00",
+ fm_name:"Your name",fm_name_ph:"First and last name",fm_model:"Model",fm_size:"Size",fm_type:"Service",fm_msg:"Comment",fm_msg_ph:"Colour, type of fur or other wishes",
+ fm_submit:"Prepare request →",fm_ready:"Your request is ready. Send it via Telegram or copy it:",fm_tg:"Send via Telegram",fm_copy:"Copy",fm_copied:"Copied ✓",fm_copy_fail:"Select the text manually",
+ fm_no_model:"Not chosen yet",fm_no_size:"Not sure — need measuring",
+ types:["Buy a ready-made model","Made to measure (with fitting)","Consultation"],
+ msg_head:"NAZZARO — new request",msg_name:"Name",msg_model:"Model",msg_size:"Size",msg_type:"Service",msg_note:"Comment",msg_none:"not chosen",msg_measure:"needs measuring",
+ ft_about:"Men's leather and suede jackets and coats. Classic tailoring, natural materials.",
+ ft_services:"Services",ft_measure:"Measuring",ft_consult:"Consultation",ft_social:"Social media",ft_rights:"© 2026 NAZZARO. All rights reserved.",ft_city:"Tashkent, Uzbekistan",
+ md_color:"Colour",md_size:"Size",md_size_hint:"Visit the store for an exact fit",md_pick:"Please choose a size",md_order:"Place order",md_custom:"Made to measure",
+ sp_material:"Material",sp_collar:"Collar",sp_fast:"Fastening",sp_sizes:"Sizes",
+ colors:{black:"Black",brown:"Dark brown",navy:"Navy"},
+ badges:{new:"New",c3:"3 colours",best:"Bestseller"}
+}};
+
 const SIZES=["46","48","50","52","54","56","58","60"];
-const C={black:{n:"Qora",h:"#151515"},brown:{n:"To'q jigarrang",h:"#3b2a20"},navy:{n:"To'q ko'k",h:"#1f2a44"}};
+const HEX={black:"#151515",brown:"#3b2a20",navy:"#1f2a44"};
 const PRODUCTS=[
- {id:"151",name:"Charm kurtka, mo'yna yoqali",cat:["charm","kurtka"],badge:"Yangi",
-  desc:"Silliq tabiiy charmdan tikilgan klassik kurtka. Yashirin zamokli planka, jigarrang mo'yna yoqa va to'qilgan naqshli cho'ntaklar.",
-  material:"Tabiiy charm",collar:"Jigarrang mo'yna",fast:"Yashirin zamok",
-  colors:[{c:"black",imgs:["151"]}]},
- {id:"131",name:"Charm palto, mo'yna latskanli",cat:["charm","palto"],
-  desc:"Yaltiroq tabiiy charmdan klassik palto. Uch tugmali, keng mo'yna latskan va bezakli kokilka chiziqlari.",
-  material:"Tabiiy charm",collar:"Mo'yna latskan",fast:"3 ta tugma",
-  colors:[{c:"black",imgs:["131"]}]},
- {id:"141",name:"Softshell kurtka, mo'yna yoqali",cat:["kurtka"],badge:"3 rang",
-  desc:"Zich, shamol o'tkazmaydigan matodan tikilgan zamonaviy kurtka. Yelka va cho'ntaklarda charm kant, ajraladigan mo'yna yoqa.",
-  material:"Softshell mato + charm kant",collar:"Mo'yna",fast:"Yashirin zamok",
-  colors:[{c:"black",code:"141",imgs:["141"]},{c:"navy",code:"142",imgs:["142"]},{c:"brown",code:"143",imgs:["143"]}]},
- {id:"041",name:"Zamsh bomber",cat:["zamsh","kurtka"],
-  desc:"Sportiv-klassik bomber: zamsh panellar, naqshli charm qo'shimchalar, to'qilgan manjet va etak.",
-  material:"Zamsh + naqshli charm",collar:"Mo'yna",fast:"Ochiq zamok",
-  colors:[{c:"black",code:"041",imgs:["041"]},{c:"brown",code:"043",imgs:["043"]}]},
- {id:"001",name:"Zamsh palto, mo'yna manjetli",cat:["zamsh","palto"],badge:"Bestseller",
-  desc:"Mo'yna latskan va qayiriladigan mo'yna manjetli zamsh palto. Ichki issiq astar bilan qahraton qishga mo'ljallangan.",
-  material:"Zamsh, mo'yna astar",collar:"Mo'yna latskan",fast:"3 ta tugma",
-  colors:[{c:"black",code:"001",imgs:["001-b","001-c"]},{c:"brown",code:"003",imgs:["003-b","003-a"]}]},
- {id:"111",name:"Zamsh kurtka, mo'yna yoqali",cat:["zamsh","kurtka"],
-  desc:"Minimalistik zamsh kurtka: yashirin zamok, tor mo'yna yoqa va to'qilgan kantli cho'ntaklar.",
-  material:"Zamsh",collar:"Mo'yna",fast:"Yashirin zamok",
-  colors:[{c:"black",imgs:["111"]}]},
- {id:"071",name:"Zamsh palto, klassik",cat:["zamsh","palto"],
-  desc:"Keng mo'yna latskanli klassik palto. Ko'krak va yenglarda bezakli tikuv, charm kantli cho'ntaklar.",
-  material:"Zamsh",collar:"Mo'yna latskan",fast:"3 ta tugma",
-  colors:[{c:"black",imgs:["071"]}]},
- {id:"121",name:"Zamsh palto, charm kantli",cat:["zamsh","palto"],
-  desc:"Ko'krak qismida charm kant bilan bezatilgan zamsh palto. Qat'iy siluet, mo'yna latskan.",
-  material:"Zamsh + charm kant",collar:"Mo'yna latskan",fast:"3 ta tugma",
-  colors:[{c:"black",imgs:["121"]}]}
+ {id:"151",cat:["charm","kurtka"],badge:"new",colors:[{c:"black",imgs:["151"]}],
+  uz:{n:"Charm kurtka, mo'yna yoqali",d:"Silliq tabiiy charmdan tikilgan klassik kurtka. Yashirin zamokli planka, jigarrang mo'yna yoqa va to'qilgan naqshli cho'ntaklar.",m:"Tabiiy charm",c:"Jigarrang mo'yna",f:"Yashirin zamok"},
+  ru:{n:"Кожаная куртка с меховым воротником",d:"Классическая куртка из гладкой натуральной кожи. Планка со скрытой молнией, коричневый меховой воротник и карманы с плетёной отделкой.",m:"Натуральная кожа",c:"Коричневый мех",f:"Скрытая молния"},
+  en:{n:"Leather jacket with fur collar",d:"A classic jacket in smooth natural leather. Concealed zip placket, brown fur collar and pockets with woven detailing.",m:"Natural leather",c:"Brown fur",f:"Concealed zip"}},
+ {id:"131",cat:["charm","palto"],colors:[{c:"black",imgs:["131"]}],
+  uz:{n:"Charm palto, mo'yna latskanli",d:"Yaltiroq tabiiy charmdan klassik palto. Uch tugmali, keng mo'yna latskan va bezakli kokilka chiziqlari.",m:"Tabiiy charm",c:"Mo'yna latskan",f:"3 ta tugma"},
+  ru:{n:"Кожаное пальто с меховыми лацканами",d:"Классическое пальто из глянцевой натуральной кожи. Три пуговицы, широкие меховые лацканы и декоративная строчка.",m:"Натуральная кожа",c:"Меховые лацканы",f:"3 пуговицы"},
+  en:{n:"Leather coat with fur lapels",d:"A classic coat in glossy natural leather. Three buttons, wide fur lapels and decorative stitching.",m:"Natural leather",c:"Fur lapels",f:"3 buttons"}},
+ {id:"141",cat:["kurtka"],badge:"c3",colors:[{c:"black",code:"141",imgs:["141"]},{c:"navy",code:"142",imgs:["142"]},{c:"brown",code:"143",imgs:["143"]}],
+  uz:{n:"Softshell kurtka, mo'yna yoqali",d:"Zich, shamol o'tkazmaydigan matodan tikilgan zamonaviy kurtka. Yelka va cho'ntaklarda charm kant, ajraladigan mo'yna yoqa.",m:"Softshell mato + charm kant",c:"Mo'yna",f:"Yashirin zamok"},
+  ru:{n:"Куртка софтшелл с меховым воротником",d:"Современная куртка из плотной ветрозащитной ткани. Кожаный кант на плечах и карманах, съёмный меховой воротник.",m:"Софтшелл + кожаный кант",c:"Мех",f:"Скрытая молния"},
+  en:{n:"Softshell jacket with fur collar",d:"A modern jacket in dense, windproof fabric. Leather piping on the shoulders and pockets, detachable fur collar.",m:"Softshell + leather piping",c:"Fur",f:"Concealed zip"}},
+ {id:"041",cat:["zamsh","kurtka"],colors:[{c:"black",code:"041",imgs:["041"]},{c:"brown",code:"043",imgs:["043"]}],
+  uz:{n:"Zamsh bomber",d:"Sportiv-klassik bomber: zamsh panellar, naqshli charm qo'shimchalar, to'qilgan manjet va etak.",m:"Zamsh + naqshli charm",c:"Mo'yna",f:"Ochiq zamok"},
+  ru:{n:"Замшевый бомбер",d:"Бомбер в спортивно-классическом стиле: замшевые панели, вставки из тиснёной кожи, трикотажные манжеты и низ.",m:"Замша + тиснёная кожа",c:"Мех",f:"Открытая молния"},
+  en:{n:"Suede bomber",d:"A sporty-classic bomber: suede panels, embossed leather inserts, knitted cuffs and hem.",m:"Suede + embossed leather",c:"Fur",f:"Exposed zip"}},
+ {id:"001",cat:["zamsh","palto"],badge:"best",colors:[{c:"black",code:"001",imgs:["001-b","001-c"]},{c:"brown",code:"003",imgs:["003-b","003-a"]}],
+  uz:{n:"Zamsh palto, mo'yna manjetli",d:"Mo'yna latskan va qayiriladigan mo'yna manjetli zamsh palto. Ichki issiq astar bilan qahraton qishga mo'ljallangan.",m:"Zamsh, mo'yna astar",c:"Mo'yna latskan",f:"3 ta tugma"},
+  ru:{n:"Замшевое пальто с меховыми манжетами",d:"Замшевое пальто с меховыми лацканами и отворачивающимися меховыми манжетами. Тёплая подкладка — для самых морозных зим.",m:"Замша, меховая подкладка",c:"Меховые лацканы",f:"3 пуговицы"},
+  en:{n:"Suede coat with fur cuffs",d:"A suede coat with fur lapels and turn-back fur cuffs. Warm lining built for the harshest winters.",m:"Suede, fur lining",c:"Fur lapels",f:"3 buttons"}},
+ {id:"111",cat:["zamsh","kurtka"],colors:[{c:"black",imgs:["111"]}],
+  uz:{n:"Zamsh kurtka, mo'yna yoqali",d:"Minimalistik zamsh kurtka: yashirin zamok, tor mo'yna yoqa va to'qilgan kantli cho'ntaklar.",m:"Zamsh",c:"Mo'yna",f:"Yashirin zamok"},
+  ru:{n:"Замшевая куртка с меховым воротником",d:"Минималистичная замшевая куртка: скрытая молния, узкий меховой воротник и карманы с плетёным кантом.",m:"Замша",c:"Мех",f:"Скрытая молния"},
+  en:{n:"Suede jacket with fur collar",d:"A minimalist suede jacket: concealed zip, slim fur collar and pockets with woven piping.",m:"Suede",c:"Fur",f:"Concealed zip"}},
+ {id:"071",cat:["zamsh","palto"],colors:[{c:"black",imgs:["071"]}],
+  uz:{n:"Zamsh palto, klassik",d:"Keng mo'yna latskanli klassik palto. Ko'krak va yenglarda bezakli tikuv, charm kantli cho'ntaklar.",m:"Zamsh",c:"Mo'yna latskan",f:"3 ta tugma"},
+  ru:{n:"Замшевое пальто, классика",d:"Классическое пальто с широкими меховыми лацканами. Декоративная строчка на груди и рукавах, карманы с кожаным кантом.",m:"Замша",c:"Меховые лацканы",f:"3 пуговицы"},
+  en:{n:"Classic suede coat",d:"A classic coat with wide fur lapels. Decorative stitching on the chest and sleeves, leather-piped pockets.",m:"Suede",c:"Fur lapels",f:"3 buttons"}},
+ {id:"121",cat:["zamsh","palto"],colors:[{c:"black",imgs:["121"]}],
+  uz:{n:"Zamsh palto, charm kantli",d:"Ko'krak qismida charm kant bilan bezatilgan zamsh palto. Qat'iy siluet, mo'yna latskan.",m:"Zamsh + charm kant",c:"Mo'yna latskan",f:"3 ta tugma"},
+  ru:{n:"Замшевое пальто с кожаным кантом",d:"Замшевое пальто с кожаным кантом на груди. Строгий силуэт, меховые лацканы.",m:"Замша + кожаный кант",c:"Меховые лацканы",f:"3 пуговицы"},
+  en:{n:"Suede coat with leather trim",d:"A suede coat with leather trim across the chest. Sharp silhouette, fur lapels.",m:"Suede + leather trim",c:"Fur lapels",f:"3 buttons"}}
 ];
 const src=n=>`img/${n}.jpg`;
 const $=s=>document.querySelector(s);
+let lang="uz",filter="all";
+try{const s=localStorage.getItem("nazzaro_lang");if(T[s])lang=s}catch(e){}
+const t=k=>T[lang][k];
+const P=p=>p[lang];
+const code=(p,c)=>"N-"+(c.code||p.id);
+const optLabel=(p,c)=>`${code(p,c)} — ${P(p).n} (${t("colors")[c.c]})`;
+
+function applyLang(){
+  document.documentElement.lang=lang;document.title=t("title");
+  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
+  document.querySelectorAll("[data-i18n-html]").forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>el.placeholder=t(el.dataset.i18nPh));
+  document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
+  // form selects
+  const fm=$("#f-model"),fs=$("#f-size"),ft=$("#f-type");
+  const mi=fm.selectedIndex,si=fs.selectedIndex,ti=Math.max(ft.selectedIndex,0);
+  fm.innerHTML=`<option value="">${t("fm_no_model")}</option>`+PRODUCTS.flatMap(p=>p.colors.map(c=>`<option>${optLabel(p,c)}</option>`)).join("");
+  fs.innerHTML=`<option value="">${t("fm_no_size")}</option>`+SIZES.map(s=>`<option>${s}</option>`).join("");
+  ft.innerHTML=t("types").map(x=>`<option>${x}</option>`).join("");
+  if(mi>0)fm.selectedIndex=mi; if(si>0)fs.selectedIndex=si; ft.selectedIndex=ti;
+  render();
+  if(cur)paint();
+  if($("#result").classList.contains("show"))buildMsg();
+}
+document.querySelectorAll("#langs button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("nazzaro_lang",lang)}catch(e){}applyLang()});
 
 /* grid */
-function render(f){
+function render(){
   const g=$("#grid");g.innerHTML="";
-  PRODUCTS.filter(p=>f==="all"||p.cat.includes(f)).forEach(p=>{
+  PRODUCTS.filter(p=>filter==="all"||p.cat.includes(filter)).forEach(p=>{
     const imgs=p.colors.flatMap(c=>c.imgs);
     const el=document.createElement("article");el.className="card";
     el.innerHTML=`<div class="ph">
-      <img class="main" src="${src(imgs[0])}" alt="${p.name}" loading="lazy">
+      <img class="main" src="${src(imgs[0])}" alt="${P(p).n}" loading="lazy">
       ${imgs[1]?`<img class="alt" src="${src(imgs[1])}" alt="" loading="lazy">`:""}
-      ${p.badge?`<span class="badge">${p.badge}</span>`:""}
-      <span class="quick">Batafsil ko'rish</span></div>
-      <div class="meta"><div class="name">${p.name}</div><div class="code">Model N-${p.colors.map(c=>c.code||p.id).join(" / ")}</div>
-      <div class="swatches">${p.colors.map(c=>`<span class="sw" style="background:${C[c.c].h}" title="${C[c.c].n}"></span>`).join("")}</div></div>`;
+      ${p.badge?`<span class="badge">${t("badges")[p.badge]}</span>`:""}
+      <span class="quick">${t("card_more")}</span></div>
+      <div class="meta"><div class="name">${P(p).n}</div><div class="code">${t("card_model")} N-${p.colors.map(c=>c.code||p.id).join(" / ")}</div>
+      <div class="swatches">${p.colors.map(c=>`<span class="sw" style="background:${HEX[c.c]}" title="${t("colors")[c.c]}"></span>`).join("")}</div></div>`;
     el.onclick=()=>openModal(p);
     g.appendChild(el);
   });
 }
+function setFilter(f){filter=f;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.f===f));render()}
 document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setFilter(b.dataset.f));
-function setFilter(f){
-  document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.f===f));
-  render(f);
-}
 document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",()=>setFilter(a.dataset.go)));
-render("all");
 
 /* modal */
 let cur=null,ci=0,size=null;
 function openModal(p){
   cur=p;ci=0;size=null;
-  $("#m-name").textContent=p.name;$("#m-desc").textContent=p.desc;
-  $("#m-colors").innerHTML=p.colors.map((c,i)=>`<button style="background:${C[c.c].h}" data-i="${i}" aria-label="${C[c.c].n}"></button>`).join("");
-  $("#m-colors").querySelectorAll("button").forEach(b=>b.onclick=()=>{ci=+b.dataset.i;paint()});
   $("#m-sizes").innerHTML=SIZES.map(s=>`<button>${s}</button>`).join("");
   $("#m-sizes").querySelectorAll("button").forEach(b=>b.onclick=()=>{size=b.textContent;$("#m-hint").style.display="none";$("#m-sizes").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b))});
-  $("#m-spec").innerHTML=`<li><span>Material</span><span>${p.material}</span></li><li><span>Yoqa</span><span>${p.collar}</span></li><li><span>Yopilishi</span><span>${p.fast}</span></li><li><span>O'lchamlar</span><span>46 — 60</span></li>`;
   $("#m-hint").style.display="none";
   paint();
   $("#modal").classList.add("open");document.body.style.overflow="hidden";
 }
 function paint(){
-  const c=cur.colors[ci];
-  $("#m-code").textContent="MODEL N-"+(c.code||cur.id);
-  $("#m-color-name").textContent=C[c.c].n;
-  $("#m-colors").querySelectorAll("button").forEach((b,i)=>b.classList.toggle("on",i===ci));
-  $("#m-big").src=src(c.imgs[0]);$("#m-big").alt=cur.name;
+  const p=cur,c=p.colors[ci];
+  $("#m-name").textContent=P(p).n;$("#m-desc").textContent=P(p).d;
+  $("#m-colors").innerHTML=p.colors.map((x,i)=>`<button style="background:${HEX[x.c]}" data-i="${i}" class="${i===ci?"on":""}" aria-label="${t("colors")[x.c]}"></button>`).join("");
+  $("#m-colors").querySelectorAll("button").forEach(b=>b.onclick=()=>{ci=+b.dataset.i;paint()});
+  $("#m-spec").innerHTML=`<li><span>${t("sp_material")}</span><span>${P(p).m}</span></li><li><span>${t("sp_collar")}</span><span>${P(p).c}</span></li><li><span>${t("sp_fast")}</span><span>${P(p).f}</span></li><li><span>${t("sp_sizes")}</span><span>46 — 60</span></li>`;
+  $("#m-code").textContent=t("card_model").toUpperCase()+" "+code(p,c);
+  $("#m-color-name").textContent=t("colors")[c.c];
+  $("#m-big").src=src(c.imgs[0]);$("#m-big").alt=P(p).n;
   $("#m-thumbs").innerHTML=c.imgs.length>1?c.imgs.map((n,i)=>`<img src="${src(n)}" class="${i?"":"on"}" alt="">`).join(""):"";
   $("#m-thumbs").style.display=c.imgs.length>1?"flex":"none";
-  $("#m-thumbs").querySelectorAll("img").forEach(t=>t.onclick=()=>{$("#m-big").src=t.src;$("#m-thumbs").querySelectorAll("img").forEach(x=>x.classList.toggle("on",x===t))});
+  $("#m-thumbs").querySelectorAll("img").forEach(x=>x.onclick=()=>{$("#m-big").src=x.src;$("#m-thumbs").querySelectorAll("img").forEach(y=>y.classList.toggle("on",y===x))});
 }
-function closeModal(){$("#modal").classList.remove("open");document.body.style.overflow=""}
+function closeModal(){$("#modal").classList.remove("open");document.body.style.overflow="";cur=null}
 document.querySelectorAll("[data-close]").forEach(e=>e.onclick=closeModal);
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 function toForm(custom){
-  const c=cur.colors[ci];
-  $("#f-model").value=`N-${c.code||cur.id} — ${cur.name} (${C[c.c].n})`;
+  const label=optLabel(cur,cur.colors[ci]);
+  const fm=$("#f-model");[...fm.options].forEach((o,i)=>{if(o.text===label)fm.selectedIndex=i});
   $("#f-size").value=custom?"":(size||"");
   $("#f-type").selectedIndex=custom?1:0;
-  closeModal();location.hash="";$("#aloqa").scrollIntoView({behavior:"smooth"});
+  closeModal();$("#aloqa").scrollIntoView({behavior:"smooth"});
 }
 $("#m-order").onclick=()=>{if(!size){$("#m-hint").style.display="block";return}toForm(false)};
 $("#m-custom").onclick=()=>toForm(true);
 
 /* form */
-const fm=$("#f-model");
-fm.innerHTML=`<option value="">Hali tanlamadim</option>`+PRODUCTS.flatMap(p=>p.colors.map(c=>{const v=`N-${c.code||p.id} — ${p.name} (${C[c.c].n})`;return `<option value="${v}">${v}</option>`})).join("");
-$("#f-size").innerHTML+=SIZES.map(s=>`<option>${s}</option>`).join("");
-$("#form").addEventListener("submit",e=>{
-  e.preventDefault();
-  const name=$("#f-name").value.trim(),phone=$("#f-phone").value.trim();
-  [$("#f-name"),$("#f-phone")].forEach(i=>i.style.borderColor=i.value.trim()?"":"#c0563f");
-  if(!name||!phone)return;
-  const txt=`NAZZARO — yangi ariza
-Ism: ${name}
-Telefon: ${phone}
-Model: ${$("#f-model").value||"tanlanmagan"}
-O'lcham: ${$("#f-size").value||"o'lchov kerak"}
-Xizmat: ${$("#f-type").value}
-Izoh: ${$("#f-msg").value.trim()||"—"}`;
+function buildMsg(){
+  const txt=`${t("msg_head")}
+${t("msg_name")}: ${$("#f-name").value.trim()}
+${t("ct_phone")}: ${$("#f-phone").value.trim()}
+${t("msg_model")}: ${$("#f-model").value||t("msg_none")}
+${t("msg_size")}: ${$("#f-size").value||t("msg_measure")}
+${t("msg_type")}: ${$("#f-type").value}
+${t("msg_note")}: ${$("#f-msg").value.trim()||"—"}`;
   $("#result-text").textContent=txt;
   $("#tg-link").href="https://t.me/share/url?url=&text="+encodeURIComponent(txt);
-  $("#result").classList.add("show");
+}
+$("#form").addEventListener("submit",e=>{
+  e.preventDefault();
+  const ok=[$("#f-name"),$("#f-phone")].map(i=>{i.style.borderColor=i.value.trim()?"":"#c0563f";return !!i.value.trim()}).every(Boolean);
+  if(!ok)return;
+  buildMsg();$("#result").classList.add("show");$("#copy-btn").textContent=t("fm_copy");
 });
 $("#copy-btn").onclick=async()=>{
-  try{await navigator.clipboard.writeText($("#result-text").textContent);$("#copy-btn").textContent="Nusxa olindi ✓"}
-  catch(e){$("#copy-btn").textContent="Matnni qo'lda belgilang"}
+  try{await navigator.clipboard.writeText($("#result-text").textContent);$("#copy-btn").textContent=t("fm_copied")}
+  catch(e){$("#copy-btn").textContent=t("fm_copy_fail")}
 };
 
 /* mobile menu */
@@ -552,6 +691,8 @@ document.querySelectorAll("#menu a").forEach(a=>a.addEventListener("click",()=>{
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+
+applyLang();
 </script>
 </body>
 </html>
