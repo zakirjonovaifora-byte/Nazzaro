@@ -4,276 +4,84 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NAZZARO — Erkaklar ustki kiyimlari</title>
-<meta name="description" content="NAZZARO — tabiiy mo'ynali yoqali charm va zamsh kurtka hamda paltolar. Tayyor kolleksiya va individual buyurtma.">
+<meta name="description" content="NAZZARO — tabiiy charm va zamshdan, mo'yna yoqali erkaklar kurtka va paltolari. Tayyor kolleksiya va individual buyurtma, Toshkent.">
+<meta name="theme-color" content="#0f0e0d">
+<link rel="canonical" href="https://nazzaro.vercel.app/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NAZZARO">
+<meta property="og:title" content="NAZZARO — Erkaklar ustki kiyimlari">
+<meta property="og:description" content="Tabiiy charm va zamshdan, mo'yna yoqali kurtka va paltolar. Tayyor kolleksiya va individual buyurtma.">
+<meta property="og:image" content="https://nazzaro.vercel.app/img/og.jpg">
+<meta property="og:url" content="https://nazzaro.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#141414; --muted:#6b6b6b; --line:#e6e3de; --bg:#ffffff; --soft:#f6f4f0; --gold:#a8865a;
-  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.wrap{max-width:1320px;margin:0 auto;padding:0 32px}
-
-/* top bar */
-.topbar{background:var(--ink);color:#fff;text-align:center;font-size:12px;letter-spacing:.08em;padding:9px 16px}
-
-/* header */
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.32em}
-.logo svg{width:26px;height:26px}
-.menu{display:flex;gap:36px;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
-.menu a{position:relative;padding:6px 0}
-.menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--ink);transition:width .25s}
-.menu a:hover::after{width:100%}
-.nav-cta{font-size:13px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--ink);padding:10px 20px;transition:.2s}
-.nav-cta:hover{background:var(--ink);color:#fff}
-.burger{display:none;width:28px;height:20px;position:relative}
-.burger span{position:absolute;left:0;right:0;height:1.5px;background:var(--ink);transition:.25s}
-.burger span:nth-child(1){top:2px}.burger span:nth-child(2){top:9px}.burger span:nth-child(3){top:16px}
-.burger.open span:nth-child(1){top:9px;transform:rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0}
-.burger.open span:nth-child(3){top:9px;transform:rotate(-45deg)}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 106px);max-height:860px}
-.hero-text{display:flex;flex-direction:column;justify-content:center;padding:64px 64px 64px 32px;max-width:680px;margin-left:auto}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.4vw,80px);line-height:1.02;margin-bottom:26px}
-h1 em{font-style:italic}
-.lead{color:var(--muted);font-size:17px;max-width:440px;margin-bottom:38px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:.2s}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{background:#333}
-.btn-line{border:1px solid var(--ink)}
-.btn-line:hover{background:var(--ink);color:#fff}
-.hero-img{position:relative;overflow:hidden;background:#1b1712}
-.hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
-.hero-tag{position:absolute;left:24px;bottom:24px;background:#fff;padding:14px 18px;font-size:13px}
-.hero-tag b{display:block;font-family:var(--serif);font-size:20px;font-weight:500}
-
-/* features strip */
-.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.strip div.item{padding:26px 20px;text-align:center;font-size:13px;color:var(--muted);border-right:1px solid var(--line)}
-.strip div.item:last-child{border-right:0}
-.strip b{display:block;color:var(--ink);font-weight:500;font-size:14px;margin-bottom:2px}
-
-/* sections */
-section.block{padding:110px 0}
-.head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:44px;flex-wrap:wrap}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.6vw,52px);line-height:1.1}
-.sub{color:var(--muted);max-width:440px}
-
-/* filters */
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.chip{padding:9px 18px;border:1px solid var(--line);font-size:13px;border-radius:40px;transition:.2s}
-.chip:hover{border-color:var(--ink)}
-.chip.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-
-/* grid */
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px 20px}
-.card{cursor:pointer}
-.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--soft)}
-.card .ph img{width:100%;height:100%;object-fit:cover;transition:opacity .5s,transform .8s}
-.card .ph img.alt{position:absolute;inset:0;opacity:0}
-.card:hover .ph img.main{transform:scale(1.04)}
-.card:hover .ph img.alt{opacity:1}
-.badge{position:absolute;top:12px;left:12px;background:#fff;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px}
-.quick{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(255,255,255,.95);text-align:center;padding:12px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;transform:translateY(130%);transition:.3s}
-.card:hover .quick{transform:none}
-.card .meta{padding-top:14px}
-.card .name{font-size:15px;font-weight:500}
-.card .code{font-size:13px;color:var(--muted)}
-.swatches{display:flex;gap:6px;margin-top:10px}
-.sw{width:14px;height:14px;border-radius:50%;border:1px solid rgba(0,0,0,.15)}
-
-/* custom made */
-.custom{background:var(--soft)}
-.custom-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.custom-img{aspect-ratio:4/5;overflow:hidden}
-.custom-img img{width:100%;height:100%;object-fit:cover}
-.steps{margin:38px 0 40px;border-top:1px solid #d8d3cb}
-.step{display:grid;grid-template-columns:56px 1fr;padding:22px 0;border-bottom:1px solid #d8d3cb}
-.step .n{font-family:var(--serif);font-size:28px;color:var(--gold);line-height:1}
-.step h3{font-size:16px;font-weight:500;margin-bottom:4px}
-.step p{color:var(--muted);font-size:14px}
-
-/* materials */
-.mat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.mat{position:relative;aspect-ratio:4/5;overflow:hidden;color:#fff}
-.mat img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.mat:hover img{transform:scale(1.05)}
-.mat::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.72))}
-.mat .t{position:absolute;left:28px;right:28px;bottom:26px;z-index:2}
-.mat h3{font-family:var(--serif);font-weight:400;font-size:32px;margin-bottom:4px}
-.mat p{font-size:14px;opacity:.85}
-
-/* about */
-.about{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
-.about p{color:var(--muted);margin-bottom:18px;font-size:16px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;border-top:1px solid var(--line);padding-top:28px}
-.stats b{font-family:var(--serif);font-size:40px;font-weight:400;display:block;line-height:1.1}
-.stats span{font-size:13px;color:var(--muted)}
-.about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.about-imgs img{aspect-ratio:3/4;object-fit:cover;width:100%}
-.about-imgs img:last-child{margin-top:60px}
-
-/* contact */
-.contact{background:var(--ink);color:#fff}
-.contact .sub{color:#aaa}
-.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px}
-.info-row{padding:20px 0;border-bottom:1px solid #333}
-.info-row small{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#888;margin-bottom:4px}
-.info-row span{font-size:16px}
-form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:6px}
-.field.full{grid-column:1/-1}
-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#999}
-input,select,textarea{font:inherit;font-size:15px;color:#fff;background:transparent;border:0;border-bottom:1px solid #444;padding:10px 0;outline:none;transition:border-color .2s;border-radius:0}
-select option{color:#000}
-input:focus,select:focus,textarea:focus{border-color:#fff}
-textarea{resize:vertical;min-height:80px}
-.btn-light{background:#fff;color:var(--ink);justify-content:center}
-.btn-light:hover{background:#ddd}
-.result{grid-column:1/-1;display:none;border:1px solid #444;padding:20px;font-size:14px;color:#ccc}
-.result.show{display:block}
-.result pre{white-space:pre-wrap;font-family:var(--sans);color:#fff;background:#1f1f1f;padding:14px;margin:12px 0;font-size:13px}
-.result .acts{display:flex;gap:10px;flex-wrap:wrap}
-.result .acts a,.result .acts button{border:1px solid #666;padding:10px 16px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.result .acts a:hover,.result .acts button:hover{background:#fff;color:var(--ink)}
-
-footer{background:#0c0c0c;color:#888;font-size:13px;padding:56px 0 30px}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid #222}
-footer .logo{color:#fff;margin-bottom:14px}
-footer h4{color:#fff;font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-footer li{list-style:none;margin-bottom:8px}
-footer a:hover{color:#fff}
-.copy{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-
-/* modal */
-.modal{position:fixed;inset:0;z-index:100;display:none}
-.modal.open{display:block}
-.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5);animation:fade .25s}
-.panel{position:absolute;top:0;right:0;bottom:0;width:min(1040px,100%);background:#fff;display:grid;grid-template-columns:1.1fr 1fr;animation:slide .35s cubic-bezier(.2,.8,.2,1);overflow:hidden}
-@keyframes fade{from{opacity:0}}
-@keyframes slide{from{transform:translateX(40px);opacity:0}}
-.gallery{background:var(--soft);display:flex;flex-direction:column;min-height:0}
-.gallery .big{flex:1;min-height:0}
-.gallery .big img{width:100%;height:100%;object-fit:contain}
-.thumbs{display:flex;gap:8px;padding:12px;background:#fff;border-top:1px solid var(--line);overflow-x:auto}
-.thumbs img{width:58px;height:76px;object-fit:cover;cursor:pointer;opacity:.5;border:1px solid transparent}
-.thumbs img.on{opacity:1;border-color:var(--ink)}
-.details{padding:48px 44px;overflow-y:auto}
-.close{position:absolute;top:16px;right:18px;width:40px;height:40px;font-size:26px;line-height:1;z-index:3;background:#fff;border-radius:50%}
-.details .code{color:var(--muted);font-size:13px;letter-spacing:.08em}
-.details h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.1;margin:6px 0 16px}
-.details .desc{color:var(--muted);margin-bottom:26px}
-.opt-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:flex;justify-content:space-between}
-.opt-label span{color:var(--muted);text-transform:none;letter-spacing:0}
-.colors{display:flex;gap:10px;margin-bottom:26px}
-.colors button{width:34px;height:34px;border-radius:50%;border:1px solid rgba(0,0,0,.2);outline-offset:3px}
-.colors button.on{outline:1px solid var(--ink)}
-.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:28px}
-.sizes button{border:1px solid var(--line);padding:11px 0;font-size:14px}
-.sizes button:hover{border-color:var(--ink)}
-.sizes button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.details .btn{width:100%;justify-content:center;margin-bottom:10px}
-.spec{margin-top:24px;border-top:1px solid var(--line)}
-.spec li{list-style:none;display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
-.spec li span:first-child{color:var(--muted)}
-.hint{font-size:12px;color:#b04a3a;margin:-18px 0 18px;min-height:0;display:none}
-
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
-.reveal.in{opacity:1;transform:none}
-
-/* responsive */
-@media (max-width:1100px){
-  .grid{grid-template-columns:repeat(3,1fr)}
-  .menu{gap:22px}
-}
-@media (max-width:900px){
-  .wrap{padding:0 20px}
-  .menu,.nav-cta{display:none}
-  .burger{display:block}
-  .menu.mobile{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px;gap:6px;border-bottom:1px solid var(--line)}
-  .menu.mobile a{padding:12px 0;font-size:15px}
-  .hero{grid-template-columns:1fr;max-height:none;min-height:0}
-  .hero-img{order:-1;aspect-ratio:4/5;max-height:72vh}
-  .hero-text{padding:44px 20px 56px;margin:0}
-  .strip .wrap{grid-template-columns:1fr 1fr;padding:0}
-  .strip div.item:nth-child(2){border-right:0}
-  .strip div.item:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  section.block{padding:72px 0}
-  .grid{grid-template-columns:1fr 1fr;gap:28px 12px}
-  .quick{display:none}
-  .custom-grid,.about,.contact-grid{grid-template-columns:1fr;gap:44px}
-  .mat-grid{grid-template-columns:1fr}
-  .mat{aspect-ratio:16/11}
-  .foot{grid-template-columns:1fr 1fr}
-  .panel{grid-template-columns:1fr;overflow-y:auto;display:block}
-  .gallery .big{height:62vh}
-  .details{padding:30px 20px 40px;overflow:visible}
-  form{grid-template-columns:1fr}
-}
-.langs{display:flex;gap:2px;border:1px solid var(--line);border-radius:40px;padding:3px}
-.langs button{font-size:12px;font-weight:500;letter-spacing:.06em;padding:6px 10px;border-radius:40px;color:var(--muted);transition:.2s}
-.langs button:hover{color:var(--ink)}
-.langs button.on{background:var(--ink);color:#fff}
-.nav-right{display:flex;align-items:center;gap:14px}
-@media (max-width:900px){.langs button{padding:5px 7px;font-size:11px}.nav-right{gap:12px}.logo{font-size:19px;letter-spacing:.2em;gap:7px}.logo svg{width:18px;height:18px}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/lg/151.webp">
+<link rel="stylesheet" href="assets/style.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ClothingStore","name":"NAZZARO","url":"https://nazzaro.vercel.app/","image":"https://nazzaro.vercel.app/img/og.jpg","description":"Men's leather and suede outerwear with fur collars. Ready-to-wear and made to measure.","address":{"@type":"PostalAddress","addressLocality":"Tashkent","addressCountry":"UZ"},"openingHours":"Mo-Su 10:00-20:00"}
+</script>
 </head>
 <body>
-
+<a href="#kolleksiya" class="sr-only">Skip</a>
 <div class="topbar" data-i18n="topbar"></div>
 
-<header>
+<header id="hdr">
   <div class="wrap nav">
     <a href="#top" class="logo" aria-label="NAZZARO">
-      <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 22V5l16 16V4"/></svg>
+      <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 22V5l16 16V4"/></svg>
       NAZZARO
     </a>
     <nav class="menu" id="menu">
       <a href="#kolleksiya" data-i18n="nav_collection"></a>
+      <a href="#shourum" data-i18n="sr_eyebrow"></a>
       <a href="#buyurtma" data-i18n="nav_custom"></a>
       <a href="#materiallar" data-i18n="nav_materials"></a>
       <a href="#biz-haqimizda" data-i18n="nav_about"></a>
       <a href="#aloqa" data-i18n="nav_contact"></a>
     </nav>
     <div class="nav-right">
-      <div class="langs" id="langs">
-        <button data-lang="uz">UZ</button><button data-lang="ru">RU</button><button data-lang="en">EN</button>
+      <div class="langs" id="langs" role="group" aria-label="Language">
+        <button data-lang="uz" aria-pressed="false">UZ</button><button data-lang="ru" aria-pressed="false">RU</button><button data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a href="#aloqa" class="nav-cta" data-i18n="cta_book"></a>
-      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
+  <div class="progress" id="progress"></div>
 </header>
 
 <main id="top">
-  <section class="hero">
-    <div class="hero-text reveal">
-      <div class="eyebrow" data-i18n="hero_eyebrow"></div>
-      <h1 data-i18n-html="hero_title"></h1>
-      <p class="lead" data-i18n="hero_lead"></p>
-      <div class="btns">
-        <a href="#kolleksiya" class="btn btn-dark" data-i18n="hero_btn1"></a>
-        <a href="#buyurtma" class="btn btn-line" data-i18n="nav_custom"></a>
+  <!-- HERO with 3D snow + tilting card -->
+  <section class="hero" id="hero">
+    <canvas id="snow" aria-hidden="true"></canvas>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow reveal" data-i18n="hero_eyebrow"></div>
+        <h1 class="reveal d1" data-i18n-html="hero_title"></h1>
+        <p class="lead reveal d2" data-i18n="hero_lead"></p>
+        <div class="btns reveal d3">
+          <a href="#kolleksiya" class="btn btn-light" data-i18n="hero_btn1"></a>
+          <a href="#shourum" class="btn btn-ghost" data-i18n="sr_eyebrow"></a>
+        </div>
+        <div class="hero-meta reveal d3">
+          <div><b>100%</b><span data-i18n="hm1"></span></div>
+          <div><b>46–60</b><span data-i18n="hm2"></span></div>
+          <div><b>3</b><span data-i18n="hm3"></span></div>
+        </div>
+      </div>
+      <div class="hero-stage" id="heroStage">
+        <div class="hero-card" id="heroCard">
+          <div class="ring"></div>
+          <div class="frame"><img src="img/lg/151.webp" alt="NAZZARO N-151" width="1000" height="1319" fetchpriority="high"></div>
+          <div class="glare"></div>
+          <div class="hero-tag"><span data-i18n="hero_tag"></span><b data-i18n="hero_tag_name"></b></div>
+          <div class="hero-badge"><span data-i18n="hero_badge"></span></div>
+        </div>
       </div>
     </div>
-    <div class="hero-img">
-      <img src="img/151.jpg" alt="NAZZARO N-151">
-      <div class="hero-tag"><span data-i18n="hero_tag"></span><b data-i18n="hero_tag_name"></b></div>
-    </div>
+    <a href="#kolleksiya" class="scroll-cue"><span data-i18n="scroll"></span><i></i></a>
   </section>
 
   <div class="strip">
@@ -285,6 +93,7 @@ footer a:hover{color:#fff}
     </div>
   </div>
 
+  <!-- COLLECTION -->
   <section class="block" id="kolleksiya">
     <div class="wrap">
       <div class="head reveal">
@@ -292,36 +101,67 @@ footer a:hover{color:#fff}
           <div class="eyebrow" data-i18n="nav_collection"></div>
           <h2 data-i18n="col_title"></h2>
         </div>
-        <div class="filters" id="filters">
-          <button class="chip active" data-f="all" data-i18n="flt_all"></button>
-          <button class="chip" data-f="charm" data-i18n="flt_leather"></button>
-          <button class="chip" data-f="zamsh" data-i18n="flt_suede"></button>
-          <button class="chip" data-f="palto" data-i18n="flt_coats"></button>
-          <button class="chip" data-f="kurtka" data-i18n="flt_jackets"></button>
+        <div class="filters" id="filters" role="group">
+          <button class="chip" data-f="all" aria-pressed="true" data-i18n="flt_all"></button>
+          <button class="chip" data-f="charm" aria-pressed="false" data-i18n="flt_leather"></button>
+          <button class="chip" data-f="zamsh" aria-pressed="false" data-i18n="flt_suede"></button>
+          <button class="chip" data-f="palto" aria-pressed="false" data-i18n="flt_coats"></button>
+          <button class="chip" data-f="kurtka" aria-pressed="false" data-i18n="flt_jackets"></button>
         </div>
       </div>
       <div class="grid" id="grid"></div>
     </div>
   </section>
 
-  <section class="block custom" id="buyurtma">
-    <div class="wrap custom-grid">
-      <div class="custom-img reveal"><img src="img/001-b.jpg" alt="NAZZARO made to measure"></div>
-      <div class="reveal">
-        <div class="eyebrow">Made to measure</div>
-        <h2 data-i18n="cm_title"></h2>
-        <p class="sub" style="margin-top:16px" data-i18n="cm_sub"></p>
-        <div class="steps">
-          <div class="step"><div class="n">01</div><div><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div></div>
-          <div class="step"><div class="n">02</div><div><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div></div>
-          <div class="step"><div class="n">03</div><div><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div></div>
-          <div class="step"><div class="n">04</div><div><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div></div>
+  <!-- 3D SHOWROOM -->
+  <section class="showroom" id="shourum">
+    <div class="wrap">
+      <div class="head reveal" style="margin-bottom:0">
+        <div>
+          <div class="eyebrow" data-i18n="sr_eyebrow"></div>
+          <h2 data-i18n="sr_title"></h2>
         </div>
-        <a href="#aloqa" class="btn btn-dark" data-i18n="cta_book_arrow"></a>
+        <p class="sub" data-i18n="sr_sub"></p>
+      </div>
+    </div>
+    <div class="stage" id="stage" aria-roledescription="carousel">
+      <div class="floor"></div>
+      <div class="ring3d" id="ring3d"></div>
+    </div>
+    <div class="wrap sr-bar">
+      <div class="sr-caption" aria-live="polite"><small data-i18n="sr_front"></small><b id="srName"></b></div>
+      <div class="sr-ctrl">
+        <span class="sr-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11V5a2 2 0 1 1 4 0v6m0-1a2 2 0 1 1 4 0v3a6 6 0 0 1-6 6h-1a6 6 0 0 1-5-2.7L3 14a2 2 0 0 1 3-2.6L9 14"/></svg><span data-i18n="sr_hint"></span></span>
+        <button class="arrow" id="srPrev" data-i18n-aria="sr_prev">←</button>
+        <button class="arrow" id="srNext" data-i18n-aria="sr_next">→</button>
+        <button class="btn btn-gold" id="srOpen" data-i18n="sr_open"></button>
       </div>
     </div>
   </section>
 
+  <!-- MADE TO MEASURE -->
+  <section class="block custom" id="buyurtma">
+    <div class="wrap custom-grid">
+      <div class="custom-visual reveal" data-tilt="6">
+        <div class="custom-img tilt-target"><img src="img/lg/001-b.webp" alt="" loading="lazy" width="853" height="1280"></div>
+        <div class="custom-float"><img src="img/sm/003-b.webp" alt="" loading="lazy" width="467" height="700"></div>
+      </div>
+      <div>
+        <div class="eyebrow reveal">Made to measure</div>
+        <h2 class="reveal d1" data-i18n="cm_title"></h2>
+        <p class="sub reveal d1" style="margin-top:1rem" data-i18n="cm_sub"></p>
+        <div class="steps">
+          <div class="step reveal d1"><div class="n">01</div><div><h3 data-i18n="s1_t"></h3><p data-i18n="s1_d"></p></div></div>
+          <div class="step reveal d2"><div class="n">02</div><div><h3 data-i18n="s2_t"></h3><p data-i18n="s2_d"></p></div></div>
+          <div class="step reveal d2"><div class="n">03</div><div><h3 data-i18n="s3_t"></h3><p data-i18n="s3_d"></p></div></div>
+          <div class="step reveal d3"><div class="n">04</div><div><h3 data-i18n="s4_t"></h3><p data-i18n="s4_d"></p></div></div>
+        </div>
+        <a href="#aloqa" class="btn btn-dark reveal" data-i18n="cta_book_arrow"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIALS (3D flip cards) -->
   <section class="block" id="materiallar">
     <div class="wrap">
       <div class="head reveal">
@@ -329,55 +169,66 @@ footer a:hover{color:#fff}
         <p class="sub" data-i18n="mat_sub"></p>
       </div>
       <div class="mat-grid">
-        <div class="mat reveal"><img src="img/131.jpg" alt=""><div class="t"><h3 data-i18n="m1_t"></h3><p data-i18n="m1_d"></p></div></div>
-        <div class="mat reveal"><img src="img/043.jpg" alt=""><div class="t"><h3 data-i18n="m2_t"></h3><p data-i18n="m2_d"></p></div></div>
-        <div class="mat reveal"><img src="img/141.jpg" alt=""><div class="t"><h3 data-i18n="m3_t"></h3><p data-i18n="m3_d"></p></div></div>
+        <div class="mat reveal" tabindex="0"><div class="mat-inner">
+          <div class="mat-front"><img src="img/sm/131.webp" alt="" loading="lazy"><span class="flip-hint" aria-hidden="true">↻</span><div class="t"><h3 data-i18n="m1_t"></h3><p data-i18n="m1_d"></p></div></div>
+          <div class="mat-back"><h3 data-i18n="m1_t"></h3><ul data-i18n-list="m1_l"></ul></div>
+        </div></div>
+        <div class="mat reveal d1" tabindex="0"><div class="mat-inner">
+          <div class="mat-front"><img src="img/sm/043.webp" alt="" loading="lazy"><span class="flip-hint" aria-hidden="true">↻</span><div class="t"><h3 data-i18n="m2_t"></h3><p data-i18n="m2_d"></p></div></div>
+          <div class="mat-back"><h3 data-i18n="m2_t"></h3><ul data-i18n-list="m2_l"></ul></div>
+        </div></div>
+        <div class="mat reveal d2" tabindex="0"><div class="mat-inner">
+          <div class="mat-front"><img src="img/sm/141.webp" alt="" loading="lazy"><span class="flip-hint" aria-hidden="true">↻</span><div class="t"><h3 data-i18n="m3_t"></h3><p data-i18n="m3_d"></p></div></div>
+          <div class="mat-back"><h3 data-i18n="m3_t"></h3><ul data-i18n-list="m3_l"></ul></div>
+        </div></div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section class="block" id="biz-haqimizda" style="padding-top:0">
     <div class="wrap about">
-      <div class="reveal">
-        <div class="eyebrow" data-i18n="nav_about"></div>
-        <h2 data-i18n="ab_title"></h2>
-        <p style="margin-top:20px" data-i18n="ab_p1"></p>
-        <p data-i18n="ab_p2"></p>
-        <div class="stats">
+      <div>
+        <div class="eyebrow reveal" data-i18n="nav_about"></div>
+        <h2 class="reveal d1" data-i18n="ab_title"></h2>
+        <p class="reveal d1" style="margin-top:1.25rem" data-i18n="ab_p1"></p>
+        <p class="reveal d2" data-i18n="ab_p2"></p>
+        <div class="stats reveal d2">
           <div><b>100%</b><span data-i18n="st1"></span></div>
           <div><b>46–60</b><span data-i18n="st2"></span></div>
-          <div><b>4</b><span data-i18n="st3"></span></div>
+          <div><b>3</b><span data-i18n="st3"></span></div>
         </div>
       </div>
-      <div class="about-imgs reveal">
-        <img src="img/001-c.jpg" alt="">
-        <img src="img/003-b.jpg" alt="">
+      <div class="about-imgs reveal" id="aboutImgs">
+        <img src="img/sm/001-c.webp" alt="" loading="lazy" width="520" height="693">
+        <img src="img/sm/142.webp" alt="" loading="lazy" width="520" height="686">
       </div>
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="block contact" id="aloqa">
     <div class="wrap contact-grid">
       <div class="reveal">
         <div class="eyebrow" data-i18n="nav_contact"></div>
         <h2 data-i18n="ct_title"></h2>
-        <p class="sub" style="margin-top:16px" data-i18n="ct_sub"></p>
-        <div style="margin-top:30px">
+        <p class="sub" style="margin-top:1rem" data-i18n="ct_sub"></p>
+        <div style="margin-top:1.9rem">
           <div class="info-row"><small data-i18n="ct_phone"></small><span>+998 (__) ___-__-__</span></div>
           <div class="info-row"><small>Telegram</small><span>@nazzaro_uz</span></div>
           <div class="info-row"><small data-i18n="ct_addr"></small><span data-i18n="ct_addr_v"></span></div>
           <div class="info-row"><small data-i18n="ct_hours"></small><span data-i18n="ct_hours_v"></span></div>
         </div>
       </div>
-      <form id="form" class="reveal" novalidate>
-        <div class="field"><label for="f-name" data-i18n="fm_name"></label><input id="f-name" required data-i18n-ph="fm_name_ph"></div>
-        <div class="field"><label for="f-phone" data-i18n="ct_phone"></label><input id="f-phone" type="tel" required placeholder="+998 90 123 45 67"></div>
+      <form id="form" class="reveal d1" novalidate>
+        <div class="field"><label for="f-name" data-i18n="fm_name"></label><input id="f-name" autocomplete="name" required data-i18n-ph="fm_name_ph"></div>
+        <div class="field"><label for="f-phone" data-i18n="ct_phone"></label><input id="f-phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="+998 90 123 45 67"></div>
         <div class="field"><label for="f-model" data-i18n="fm_model"></label><select id="f-model"></select></div>
         <div class="field"><label for="f-size" data-i18n="fm_size"></label><select id="f-size"></select></div>
         <div class="field full"><label for="f-type" data-i18n="fm_type"></label><select id="f-type"></select></div>
         <div class="field full"><label for="f-msg" data-i18n="fm_msg"></label><textarea id="f-msg" data-i18n-ph="fm_msg_ph"></textarea></div>
         <div class="field full"><button class="btn btn-light" type="submit" data-i18n="fm_submit"></button></div>
-        <div class="result" id="result">
+        <div class="result" id="result" aria-live="polite">
           <span data-i18n="fm_ready"></span>
           <pre id="result-text"></pre>
           <div class="acts">
@@ -394,32 +245,35 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="foot">
       <div>
-        <div class="logo"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 22V5l16 16V4"/></svg>NAZZARO</div>
-        <p style="max-width:300px" data-i18n="ft_about"></p>
+        <div class="logo"><svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 22V5l16 16V4"/></svg>NAZZARO</div>
+        <p style="max-width:19rem" data-i18n="ft_about"></p>
       </div>
       <div><h4 data-i18n="nav_collection"></h4><ul><li><a href="#kolleksiya" data-go="charm" data-i18n="flt_leather"></a></li><li><a href="#kolleksiya" data-go="zamsh" data-i18n="flt_suede"></a></li><li><a href="#kolleksiya" data-go="palto" data-i18n="flt_coats"></a></li><li><a href="#kolleksiya" data-go="kurtka" data-i18n="flt_jackets"></a></li></ul></div>
-      <div><h4 data-i18n="ft_services"></h4><ul><li><a href="#buyurtma" data-i18n="nav_custom"></a></li><li><a href="#aloqa" data-i18n="ft_measure"></a></li><li><a href="#aloqa" data-i18n="ft_consult"></a></li></ul></div>
+      <div><h4 data-i18n="ft_services"></h4><ul><li><a href="#buyurtma" data-i18n="nav_custom"></a></li><li><a href="#shourum" data-i18n="sr_eyebrow"></a></li><li><a href="#aloqa" data-i18n="ft_measure"></a></li><li><a href="#aloqa" data-i18n="ft_consult"></a></li></ul></div>
       <div><h4 data-i18n="ft_social"></h4><ul><li><a href="#aloqa">Telegram</a></li><li><a href="#aloqa">Instagram</a></li></ul></div>
     </div>
     <div class="copy"><span data-i18n="ft_rights"></span><span data-i18n="ft_city"></span></div>
   </div>
 </footer>
 
+<a href="#aloqa" class="fab" id="fab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg><span data-i18n="fab"></span></a>
+
 <div class="modal" id="modal" aria-hidden="true">
   <div class="backdrop" data-close></div>
-  <div class="panel" role="dialog" aria-modal="true">
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="m-name">
     <button class="close" data-close aria-label="Close">×</button>
     <div class="gallery">
-      <div class="big"><img id="m-big" alt=""></div>
+      <div class="big" id="m-bigwrap"><img id="m-big" alt=""></div>
       <div class="thumbs" id="m-thumbs"></div>
     </div>
     <div class="details">
       <div class="code" id="m-code"></div>
       <h3 id="m-name"></h3>
       <p class="desc" id="m-desc"></p>
-      <div class="opt-label"><span style="color:inherit;letter-spacing:.12em;text-transform:uppercase" data-i18n="md_color"></span> <span id="m-color-name"></span></div>
+      <div class="opt-label"><span data-i18n="md_color"></span><span class="val" id="m-color-name"></span></div>
       <div class="colors" id="m-colors"></div>
-      <div class="opt-label"><span style="color:inherit;letter-spacing:.12em;text-transform:uppercase" data-i18n="md_size"></span> <span data-i18n="md_size_hint"></span></div>
+      <div class="opt-label"><span data-i18n="md_size"></span><button class="link" id="m-guide-btn" aria-expanded="false" data-i18n="md_guide"></button></div>
+      <div class="size-guide" id="m-guide"></div>
       <div class="sizes" id="m-sizes"></div>
       <div class="hint" id="m-hint" data-i18n="md_pick"></div>
       <button class="btn btn-dark" id="m-order" data-i18n="md_order"></button>
@@ -429,270 +283,7 @@ footer a:hover{color:#fff}
   </div>
 </div>
 
-<script>
-const T={
-uz:{
- title:"NAZZARO — Erkaklar ustki kiyimlari",
- topbar:"Yangi qish kolleksiyasi 2026 — tabiiy mo'ynali yoqalar bilan",
- nav_collection:"Kolleksiya",nav_custom:"Individual buyurtma",nav_materials:"Materiallar",nav_about:"Biz haqimizda",nav_contact:"Aloqa",
- cta_book:"Uchrashuv belgilash",cta_book_arrow:"Uchrashuv belgilash →",
- hero_eyebrow:"Kuz — Qish 2026",hero_title:"Sovuqda ham <em>klassik</em> ko'rinish",
- hero_lead:"Tabiiy charm va yumshoq zamshdan tikilgan, haqiqiy mo'yna yoqali erkaklar kurtka va paltolari. Tayyor modellar yoki aynan sizning o'lchamingizga.",
- hero_btn1:"Kolleksiyani ko'rish →",hero_tag:"Yangi model",hero_tag_name:"N-151 Charm kurtka",
- f1_t:"Tabiiy materiallar",f1_d:"Charm, zamsh, mo'yna",f2_t:"Individual o'lchov",f2_d:"Do'konda bepul",f3_t:"Kafolat",f3_d:"Sifatga to'liq javob beramiz",f4_t:"Yetkazib berish",f4_d:"O'zbekiston bo'ylab",
- col_title:"Erkaklar ustki kiyimlari",flt_all:"Hammasi",flt_leather:"Charm",flt_suede:"Zamsh",flt_coats:"Paltolar",flt_jackets:"Kurtkalar",
- card_more:"Batafsil ko'rish",card_model:"Model",
- cm_title:"Aynan siz uchun tikilgan",cm_sub:"Har qanday modelni o'z o'lchamingiz, rangingiz va mo'yna turingiz bilan buyurtma qiling. Jarayon oddiy — to'rt qadam.",
- s1_t:"Modelni tanlang",s1_d:"Kolleksiyadagi istalgan kurtka yoki paltoni asos qilib oling.",
- s2_t:"O'lchov oling",s2_d:"Mutaxassisimiz do'konda aniq o'lchovlarni bepul oladi.",
- s3_t:"Materialni belgilang",s3_d:"Charm yoki zamsh, rang, yoqa va manjet uchun mo'yna turini tanlang.",
- s4_t:"Tayyor buyumni oling",s4_d:"Kiyib ko'rish va kerakli tuzatishlardan so'ng sizga topshiramiz.",
- mat_title:"Sifat tafsilotlarda",mat_sub:"Har bir buyum uchun materiallar alohida saralanadi — shuning uchun NAZZARO yillar davomida shaklini yo'qotmaydi.",
- m1_t:"Tabiiy charm",m1_d:"Yumshoq, elastik va vaqt o'tgan sari yanada chiroyli.",m2_t:"Zamsh",m2_d:"Baxmaldek yuza, issiq va yengil.",m3_t:"Mo'yna yoqa",m3_d:"Sovuq kunlarda bo'yin va yuzni himoya qiladi.",
- ab_title:"NAZZARO — erkaklar uchun klassika",
- ab_p1:"NAZZARO — erkaklar ustki kiyimlariga ixtisoslashgan brend. Biz klassik bichim, sifatli material va qo'l mehnati uyg'unligiga ishonamiz.",
- ab_p2:"Kolleksiyamizdagi har bir model biznes uslubiga ham, kundalik kiyinishga ham mos keladi: kostyum ustidan ham, sviter bilan ham birdek chiroyli.",
- st1:"Tabiiy materiallar",st2:"O'lchamlar qatori",st3:"Asosiy rang",
- ct_title:"Uchrashuv belgilang",ct_sub:"Ariza qoldiring — menejerimiz siz bilan bog'lanib, qulay vaqtni kelishib oladi.",
- ct_phone:"Telefon",ct_addr:"Manzil",ct_addr_v:"Toshkent sh., do'kon manzili",ct_hours:"Ish vaqti",ct_hours_v:"Har kuni 10:00 — 20:00",
- fm_name:"Ismingiz",fm_name_ph:"Ism Familiya",fm_model:"Model",fm_size:"O'lcham",fm_type:"Xizmat turi",fm_msg:"Izoh",fm_msg_ph:"Rang, mo'yna turi yoki boshqa istaklaringiz",
- fm_submit:"Ariza tayyorlash →",fm_ready:"Arizangiz tayyor. Uni Telegram orqali yuboring yoki nusxa oling:",fm_tg:"Telegram orqali yuborish",fm_copy:"Nusxa olish",fm_copied:"Nusxa olindi ✓",fm_copy_fail:"Matnni qo'lda belgilang",
- fm_no_model:"Hali tanlamadim",fm_no_size:"Bilmayman — o'lchov kerak",
- types:["Tayyor modelni xarid qilish","Individual buyurtma (o'lchov bilan)","Maslahat olish"],
- msg_head:"NAZZARO — yangi ariza",msg_name:"Ism",msg_model:"Model",msg_size:"O'lcham",msg_type:"Xizmat",msg_note:"Izoh",msg_none:"tanlanmagan",msg_measure:"o'lchov kerak",
- ft_about:"Erkaklar uchun charm va zamsh kurtka hamda paltolar. Klassik bichim, tabiiy materiallar.",
- ft_services:"Xizmatlar",ft_measure:"O'lchov olish",ft_consult:"Maslahat",ft_social:"Ijtimoiy tarmoqlar",ft_rights:"© 2026 NAZZARO. Barcha huquqlar himoyalangan.",ft_city:"Toshkent, O'zbekiston",
- md_color:"Rang",md_size:"O'lcham",md_size_hint:"Aniq o'lcham uchun do'konga keling",md_pick:"Iltimos, o'lchamni tanlang",md_order:"Buyurtma berish",md_custom:"Individual o'lchov bilan",
- sp_material:"Material",sp_collar:"Yoqa",sp_fast:"Yopilishi",sp_sizes:"O'lchamlar",
- colors:{black:"Qora",brown:"To'q jigarrang",navy:"To'q ko'k"},
- badges:{new:"Yangi",c3:"3 rang",best:"Bestseller"}
-},
-ru:{
- title:"NAZZARO — Мужская верхняя одежда",
- topbar:"Новая зимняя коллекция 2026 — с натуральными меховыми воротниками",
- nav_collection:"Коллекция",nav_custom:"Индивидуальный пошив",nav_materials:"Материалы",nav_about:"О нас",nav_contact:"Контакты",
- cta_book:"Записаться",cta_book_arrow:"Записаться на примерку →",
- hero_eyebrow:"Осень — Зима 2026",hero_title:"<em>Классика</em>, которой не страшен холод",
- hero_lead:"Мужские куртки и пальто из натуральной кожи и мягкой замши с воротниками из натурального меха. Готовые модели или пошив точно по вашим меркам.",
- hero_btn1:"Смотреть коллекцию →",hero_tag:"Новинка",hero_tag_name:"N-151 Кожаная куртка",
- f1_t:"Натуральные материалы",f1_d:"Кожа, замша, мех",f2_t:"Индивидуальные мерки",f2_d:"Бесплатно в магазине",f3_t:"Гарантия",f3_d:"Полностью отвечаем за качество",f4_t:"Доставка",f4_d:"По всему Узбекистану",
- col_title:"Мужская верхняя одежда",flt_all:"Все",flt_leather:"Кожа",flt_suede:"Замша",flt_coats:"Пальто",flt_jackets:"Куртки",
- card_more:"Подробнее",card_model:"Модель",
- cm_title:"Сшито специально для вас",cm_sub:"Закажите любую модель по своим меркам, в нужном цвете и с выбранным мехом. Всё просто — четыре шага.",
- s1_t:"Выберите модель",s1_d:"Возьмите за основу любую куртку или пальто из коллекции.",
- s2_t:"Снимите мерки",s2_d:"Наш специалист бесплатно снимет точные мерки в магазине.",
- s3_t:"Выберите материалы",s3_d:"Кожа или замша, цвет, мех для воротника и манжет.",
- s4_t:"Получите готовое изделие",s4_d:"После примерки и необходимой подгонки мы передадим его вам.",
- mat_title:"Качество в деталях",mat_sub:"Материалы для каждого изделия отбираются отдельно — поэтому NAZZARO годами сохраняет форму.",
- m1_t:"Натуральная кожа",m1_d:"Мягкая, эластичная и с годами становится только красивее.",m2_t:"Замша",m2_d:"Бархатистая поверхность, тёплая и лёгкая.",m3_t:"Меховой воротник",m3_d:"Защищает шею и лицо в морозные дни.",
- ab_title:"NAZZARO — классика для мужчин",
- ab_p1:"NAZZARO — бренд, специализирующийся на мужской верхней одежде. Мы верим в сочетание классического кроя, качественных материалов и ручной работы.",
- ab_p2:"Каждая модель коллекции подходит и для делового стиля, и для повседневной носки: одинаково хорошо смотрится поверх костюма и со свитером.",
- st1:"Натуральные материалы",st2:"Размерный ряд",st3:"Основных цвета",
- ct_title:"Запишитесь на визит",ct_sub:"Оставьте заявку — менеджер свяжется с вами и согласует удобное время.",
- ct_phone:"Телефон",ct_addr:"Адрес",ct_addr_v:"г. Ташкент, адрес магазина",ct_hours:"Часы работы",ct_hours_v:"Ежедневно 10:00 — 20:00",
- fm_name:"Ваше имя",fm_name_ph:"Имя Фамилия",fm_model:"Модель",fm_size:"Размер",fm_type:"Тип услуги",fm_msg:"Комментарий",fm_msg_ph:"Цвет, вид меха или другие пожелания",
- fm_submit:"Сформировать заявку →",fm_ready:"Заявка готова. Отправьте её через Telegram или скопируйте:",fm_tg:"Отправить в Telegram",fm_copy:"Копировать",fm_copied:"Скопировано ✓",fm_copy_fail:"Выделите текст вручную",
- fm_no_model:"Ещё не выбрал",fm_no_size:"Не знаю — нужны мерки",
- types:["Покупка готовой модели","Индивидуальный пошив (с мерками)","Консультация"],
- msg_head:"NAZZARO — новая заявка",msg_name:"Имя",msg_model:"Модель",msg_size:"Размер",msg_type:"Услуга",msg_note:"Комментарий",msg_none:"не выбрана",msg_measure:"нужны мерки",
- ft_about:"Мужские кожаные и замшевые куртки и пальто. Классический крой, натуральные материалы.",
- ft_services:"Услуги",ft_measure:"Снятие мерок",ft_consult:"Консультация",ft_social:"Соцсети",ft_rights:"© 2026 NAZZARO. Все права защищены.",ft_city:"Ташкент, Узбекистан",
- md_color:"Цвет",md_size:"Размер",md_size_hint:"Для точного размера приходите в магазин",md_pick:"Пожалуйста, выберите размер",md_order:"Оформить заказ",md_custom:"Пошив по меркам",
- sp_material:"Материал",sp_collar:"Воротник",sp_fast:"Застёжка",sp_sizes:"Размеры",
- colors:{black:"Чёрный",brown:"Тёмно-коричневый",navy:"Тёмно-синий"},
- badges:{new:"Новинка",c3:"3 цвета",best:"Бестселлер"}
-},
-en:{
- title:"NAZZARO — Men's Outerwear",
- topbar:"New Winter Collection 2026 — with natural fur collars",
- nav_collection:"Collection",nav_custom:"Made to measure",nav_materials:"Materials",nav_about:"About",nav_contact:"Contact",
- cta_book:"Book a fitting",cta_book_arrow:"Book a fitting →",
- hero_eyebrow:"Fall — Winter 2026",hero_title:"<em>Classic</em> style, even in the cold",
- hero_lead:"Men's jackets and coats in natural leather and soft suede, finished with genuine fur collars. Ready to wear, or made to your exact measurements.",
- hero_btn1:"Shop the collection →",hero_tag:"New arrival",hero_tag_name:"N-151 Leather jacket",
- f1_t:"Natural materials",f1_d:"Leather, suede, fur",f2_t:"Personal fitting",f2_d:"Free in store",f3_t:"Guarantee",f3_d:"We stand behind our quality",f4_t:"Delivery",f4_d:"Across Uzbekistan",
- col_title:"Men's outerwear",flt_all:"All",flt_leather:"Leather",flt_suede:"Suede",flt_coats:"Coats",flt_jackets:"Jackets",
- card_more:"View details",card_model:"Model",
- cm_title:"Made just for you",cm_sub:"Order any model in your size, colour and choice of fur. It's simple — four steps.",
- s1_t:"Choose a model",s1_d:"Start from any jacket or coat in the collection.",
- s2_t:"Get measured",s2_d:"Our specialist takes your exact measurements in store, free of charge.",
- s3_t:"Pick your materials",s3_d:"Leather or suede, colour, and fur for the collar and cuffs.",
- s4_t:"Collect your piece",s4_d:"After a fitting and any adjustments, it's ready for you.",
- mat_title:"Quality in the details",mat_sub:"Materials are selected piece by piece — which is why NAZZARO keeps its shape for years.",
- m1_t:"Natural leather",m1_d:"Soft, supple, and only gets better with time.",m2_t:"Suede",m2_d:"Velvety surface, warm and light.",m3_t:"Fur collar",m3_d:"Shields your neck and face on frosty days.",
- ab_title:"NAZZARO — classics for men",
- ab_p1:"NAZZARO is a brand dedicated to men's outerwear. We believe in the balance of classic tailoring, quality materials and handcraft.",
- ab_p2:"Every model works for both business and everyday wear — equally sharp over a suit or with a sweater.",
- st1:"Natural materials",st2:"Size range",st3:"Core colours",
- ct_title:"Book a visit",ct_sub:"Leave a request — our manager will contact you to arrange a convenient time.",
- ct_phone:"Phone",ct_addr:"Address",ct_addr_v:"Tashkent, store address",ct_hours:"Opening hours",ct_hours_v:"Daily 10:00 — 20:00",
- fm_name:"Your name",fm_name_ph:"First and last name",fm_model:"Model",fm_size:"Size",fm_type:"Service",fm_msg:"Comment",fm_msg_ph:"Colour, type of fur or other wishes",
- fm_submit:"Prepare request →",fm_ready:"Your request is ready. Send it via Telegram or copy it:",fm_tg:"Send via Telegram",fm_copy:"Copy",fm_copied:"Copied ✓",fm_copy_fail:"Select the text manually",
- fm_no_model:"Not chosen yet",fm_no_size:"Not sure — need measuring",
- types:["Buy a ready-made model","Made to measure (with fitting)","Consultation"],
- msg_head:"NAZZARO — new request",msg_name:"Name",msg_model:"Model",msg_size:"Size",msg_type:"Service",msg_note:"Comment",msg_none:"not chosen",msg_measure:"needs measuring",
- ft_about:"Men's leather and suede jackets and coats. Classic tailoring, natural materials.",
- ft_services:"Services",ft_measure:"Measuring",ft_consult:"Consultation",ft_social:"Social media",ft_rights:"© 2026 NAZZARO. All rights reserved.",ft_city:"Tashkent, Uzbekistan",
- md_color:"Colour",md_size:"Size",md_size_hint:"Visit the store for an exact fit",md_pick:"Please choose a size",md_order:"Place order",md_custom:"Made to measure",
- sp_material:"Material",sp_collar:"Collar",sp_fast:"Fastening",sp_sizes:"Sizes",
- colors:{black:"Black",brown:"Dark brown",navy:"Navy"},
- badges:{new:"New",c3:"3 colours",best:"Bestseller"}
-}};
-
-const SIZES=["46","48","50","52","54","56","58","60"];
-const HEX={black:"#151515",brown:"#3b2a20",navy:"#1f2a44"};
-const PRODUCTS=[
- {id:"151",cat:["charm","kurtka"],badge:"new",colors:[{c:"black",imgs:["151"]}],
-  uz:{n:"Charm kurtka, mo'yna yoqali",d:"Silliq tabiiy charmdan tikilgan klassik kurtka. Yashirin zamokli planka, jigarrang mo'yna yoqa va to'qilgan naqshli cho'ntaklar.",m:"Tabiiy charm",c:"Jigarrang mo'yna",f:"Yashirin zamok"},
-  ru:{n:"Кожаная куртка с меховым воротником",d:"Классическая куртка из гладкой натуральной кожи. Планка со скрытой молнией, коричневый меховой воротник и карманы с плетёной отделкой.",m:"Натуральная кожа",c:"Коричневый мех",f:"Скрытая молния"},
-  en:{n:"Leather jacket with fur collar",d:"A classic jacket in smooth natural leather. Concealed zip placket, brown fur collar and pockets with woven detailing.",m:"Natural leather",c:"Brown fur",f:"Concealed zip"}},
- {id:"131",cat:["charm","palto"],colors:[{c:"black",imgs:["131"]}],
-  uz:{n:"Charm palto, mo'yna latskanli",d:"Yaltiroq tabiiy charmdan klassik palto. Uch tugmali, keng mo'yna latskan va bezakli kokilka chiziqlari.",m:"Tabiiy charm",c:"Mo'yna latskan",f:"3 ta tugma"},
-  ru:{n:"Кожаное пальто с меховыми лацканами",d:"Классическое пальто из глянцевой натуральной кожи. Три пуговицы, широкие меховые лацканы и декоративная строчка.",m:"Натуральная кожа",c:"Меховые лацканы",f:"3 пуговицы"},
-  en:{n:"Leather coat with fur lapels",d:"A classic coat in glossy natural leather. Three buttons, wide fur lapels and decorative stitching.",m:"Natural leather",c:"Fur lapels",f:"3 buttons"}},
- {id:"141",cat:["kurtka"],badge:"c3",colors:[{c:"black",code:"141",imgs:["141"]},{c:"navy",code:"142",imgs:["142"]},{c:"brown",code:"143",imgs:["143"]}],
-  uz:{n:"Softshell kurtka, mo'yna yoqali",d:"Zich, shamol o'tkazmaydigan matodan tikilgan zamonaviy kurtka. Yelka va cho'ntaklarda charm kant, ajraladigan mo'yna yoqa.",m:"Softshell mato + charm kant",c:"Mo'yna",f:"Yashirin zamok"},
-  ru:{n:"Куртка софтшелл с меховым воротником",d:"Современная куртка из плотной ветрозащитной ткани. Кожаный кант на плечах и карманах, съёмный меховой воротник.",m:"Софтшелл + кожаный кант",c:"Мех",f:"Скрытая молния"},
-  en:{n:"Softshell jacket with fur collar",d:"A modern jacket in dense, windproof fabric. Leather piping on the shoulders and pockets, detachable fur collar.",m:"Softshell + leather piping",c:"Fur",f:"Concealed zip"}},
- {id:"041",cat:["zamsh","kurtka"],colors:[{c:"black",code:"041",imgs:["041"]},{c:"brown",code:"043",imgs:["043"]}],
-  uz:{n:"Zamsh bomber",d:"Sportiv-klassik bomber: zamsh panellar, naqshli charm qo'shimchalar, to'qilgan manjet va etak.",m:"Zamsh + naqshli charm",c:"Mo'yna",f:"Ochiq zamok"},
-  ru:{n:"Замшевый бомбер",d:"Бомбер в спортивно-классическом стиле: замшевые панели, вставки из тиснёной кожи, трикотажные манжеты и низ.",m:"Замша + тиснёная кожа",c:"Мех",f:"Открытая молния"},
-  en:{n:"Suede bomber",d:"A sporty-classic bomber: suede panels, embossed leather inserts, knitted cuffs and hem.",m:"Suede + embossed leather",c:"Fur",f:"Exposed zip"}},
- {id:"001",cat:["zamsh","palto"],badge:"best",colors:[{c:"black",code:"001",imgs:["001-b","001-c"]},{c:"brown",code:"003",imgs:["003-b","003-a"]}],
-  uz:{n:"Zamsh palto, mo'yna manjetli",d:"Mo'yna latskan va qayiriladigan mo'yna manjetli zamsh palto. Ichki issiq astar bilan qahraton qishga mo'ljallangan.",m:"Zamsh, mo'yna astar",c:"Mo'yna latskan",f:"3 ta tugma"},
-  ru:{n:"Замшевое пальто с меховыми манжетами",d:"Замшевое пальто с меховыми лацканами и отворачивающимися меховыми манжетами. Тёплая подкладка — для самых морозных зим.",m:"Замша, меховая подкладка",c:"Меховые лацканы",f:"3 пуговицы"},
-  en:{n:"Suede coat with fur cuffs",d:"A suede coat with fur lapels and turn-back fur cuffs. Warm lining built for the harshest winters.",m:"Suede, fur lining",c:"Fur lapels",f:"3 buttons"}},
- {id:"111",cat:["zamsh","kurtka"],colors:[{c:"black",imgs:["111"]}],
-  uz:{n:"Zamsh kurtka, mo'yna yoqali",d:"Minimalistik zamsh kurtka: yashirin zamok, tor mo'yna yoqa va to'qilgan kantli cho'ntaklar.",m:"Zamsh",c:"Mo'yna",f:"Yashirin zamok"},
-  ru:{n:"Замшевая куртка с меховым воротником",d:"Минималистичная замшевая куртка: скрытая молния, узкий меховой воротник и карманы с плетёным кантом.",m:"Замша",c:"Мех",f:"Скрытая молния"},
-  en:{n:"Suede jacket with fur collar",d:"A minimalist suede jacket: concealed zip, slim fur collar and pockets with woven piping.",m:"Suede",c:"Fur",f:"Concealed zip"}},
- {id:"071",cat:["zamsh","palto"],colors:[{c:"black",imgs:["071"]}],
-  uz:{n:"Zamsh palto, klassik",d:"Keng mo'yna latskanli klassik palto. Ko'krak va yenglarda bezakli tikuv, charm kantli cho'ntaklar.",m:"Zamsh",c:"Mo'yna latskan",f:"3 ta tugma"},
-  ru:{n:"Замшевое пальто, классика",d:"Классическое пальто с широкими меховыми лацканами. Декоративная строчка на груди и рукавах, карманы с кожаным кантом.",m:"Замша",c:"Меховые лацканы",f:"3 пуговицы"},
-  en:{n:"Classic suede coat",d:"A classic coat with wide fur lapels. Decorative stitching on the chest and sleeves, leather-piped pockets.",m:"Suede",c:"Fur lapels",f:"3 buttons"}},
- {id:"121",cat:["zamsh","palto"],colors:[{c:"black",imgs:["121"]}],
-  uz:{n:"Zamsh palto, charm kantli",d:"Ko'krak qismida charm kant bilan bezatilgan zamsh palto. Qat'iy siluet, mo'yna latskan.",m:"Zamsh + charm kant",c:"Mo'yna latskan",f:"3 ta tugma"},
-  ru:{n:"Замшевое пальто с кожаным кантом",d:"Замшевое пальто с кожаным кантом на груди. Строгий силуэт, меховые лацканы.",m:"Замша + кожаный кант",c:"Меховые лацканы",f:"3 пуговицы"},
-  en:{n:"Suede coat with leather trim",d:"A suede coat with leather trim across the chest. Sharp silhouette, fur lapels.",m:"Suede + leather trim",c:"Fur lapels",f:"3 buttons"}}
-];
-const src=n=>`img/${n}.jpg`;
-const $=s=>document.querySelector(s);
-let lang="uz",filter="all";
-try{const s=localStorage.getItem("nazzaro_lang");if(T[s])lang=s}catch(e){}
-const t=k=>T[lang][k];
-const P=p=>p[lang];
-const code=(p,c)=>"N-"+(c.code||p.id);
-const optLabel=(p,c)=>`${code(p,c)} — ${P(p).n} (${t("colors")[c.c]})`;
-
-function applyLang(){
-  document.documentElement.lang=lang;document.title=t("title");
-  document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
-  document.querySelectorAll("[data-i18n-html]").forEach(el=>el.innerHTML=t(el.dataset.i18nHtml));
-  document.querySelectorAll("[data-i18n-ph]").forEach(el=>el.placeholder=t(el.dataset.i18nPh));
-  document.querySelectorAll("#langs button").forEach(b=>b.classList.toggle("on",b.dataset.lang===lang));
-  // form selects
-  const fm=$("#f-model"),fs=$("#f-size"),ft=$("#f-type");
-  const mi=fm.selectedIndex,si=fs.selectedIndex,ti=Math.max(ft.selectedIndex,0);
-  fm.innerHTML=`<option value="">${t("fm_no_model")}</option>`+PRODUCTS.flatMap(p=>p.colors.map(c=>`<option>${optLabel(p,c)}</option>`)).join("");
-  fs.innerHTML=`<option value="">${t("fm_no_size")}</option>`+SIZES.map(s=>`<option>${s}</option>`).join("");
-  ft.innerHTML=t("types").map(x=>`<option>${x}</option>`).join("");
-  if(mi>0)fm.selectedIndex=mi; if(si>0)fs.selectedIndex=si; ft.selectedIndex=ti;
-  render();
-  if(cur)paint();
-  if($("#result").classList.contains("show"))buildMsg();
-}
-document.querySelectorAll("#langs button").forEach(b=>b.onclick=()=>{lang=b.dataset.lang;try{localStorage.setItem("nazzaro_lang",lang)}catch(e){}applyLang()});
-
-/* grid */
-function render(){
-  const g=$("#grid");g.innerHTML="";
-  PRODUCTS.filter(p=>filter==="all"||p.cat.includes(filter)).forEach(p=>{
-    const imgs=p.colors.flatMap(c=>c.imgs);
-    const el=document.createElement("article");el.className="card";
-    el.innerHTML=`<div class="ph">
-      <img class="main" src="${src(imgs[0])}" alt="${P(p).n}" loading="lazy">
-      ${imgs[1]?`<img class="alt" src="${src(imgs[1])}" alt="" loading="lazy">`:""}
-      ${p.badge?`<span class="badge">${t("badges")[p.badge]}</span>`:""}
-      <span class="quick">${t("card_more")}</span></div>
-      <div class="meta"><div class="name">${P(p).n}</div><div class="code">${t("card_model")} N-${p.colors.map(c=>c.code||p.id).join(" / ")}</div>
-      <div class="swatches">${p.colors.map(c=>`<span class="sw" style="background:${HEX[c.c]}" title="${t("colors")[c.c]}"></span>`).join("")}</div></div>`;
-    el.onclick=()=>openModal(p);
-    g.appendChild(el);
-  });
-}
-function setFilter(f){filter=f;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.f===f));render()}
-document.querySelectorAll(".chip").forEach(b=>b.onclick=()=>setFilter(b.dataset.f));
-document.querySelectorAll("[data-go]").forEach(a=>a.addEventListener("click",()=>setFilter(a.dataset.go)));
-
-/* modal */
-let cur=null,ci=0,size=null;
-function openModal(p){
-  cur=p;ci=0;size=null;
-  $("#m-sizes").innerHTML=SIZES.map(s=>`<button>${s}</button>`).join("");
-  $("#m-sizes").querySelectorAll("button").forEach(b=>b.onclick=()=>{size=b.textContent;$("#m-hint").style.display="none";$("#m-sizes").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b))});
-  $("#m-hint").style.display="none";
-  paint();
-  $("#modal").classList.add("open");document.body.style.overflow="hidden";
-}
-function paint(){
-  const p=cur,c=p.colors[ci];
-  $("#m-name").textContent=P(p).n;$("#m-desc").textContent=P(p).d;
-  $("#m-colors").innerHTML=p.colors.map((x,i)=>`<button style="background:${HEX[x.c]}" data-i="${i}" class="${i===ci?"on":""}" aria-label="${t("colors")[x.c]}"></button>`).join("");
-  $("#m-colors").querySelectorAll("button").forEach(b=>b.onclick=()=>{ci=+b.dataset.i;paint()});
-  $("#m-spec").innerHTML=`<li><span>${t("sp_material")}</span><span>${P(p).m}</span></li><li><span>${t("sp_collar")}</span><span>${P(p).c}</span></li><li><span>${t("sp_fast")}</span><span>${P(p).f}</span></li><li><span>${t("sp_sizes")}</span><span>46 — 60</span></li>`;
-  $("#m-code").textContent=t("card_model").toUpperCase()+" "+code(p,c);
-  $("#m-color-name").textContent=t("colors")[c.c];
-  $("#m-big").src=src(c.imgs[0]);$("#m-big").alt=P(p).n;
-  $("#m-thumbs").innerHTML=c.imgs.length>1?c.imgs.map((n,i)=>`<img src="${src(n)}" class="${i?"":"on"}" alt="">`).join(""):"";
-  $("#m-thumbs").style.display=c.imgs.length>1?"flex":"none";
-  $("#m-thumbs").querySelectorAll("img").forEach(x=>x.onclick=()=>{$("#m-big").src=x.src;$("#m-thumbs").querySelectorAll("img").forEach(y=>y.classList.toggle("on",y===x))});
-}
-function closeModal(){$("#modal").classList.remove("open");document.body.style.overflow="";cur=null}
-document.querySelectorAll("[data-close]").forEach(e=>e.onclick=closeModal);
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-function toForm(custom){
-  const label=optLabel(cur,cur.colors[ci]);
-  const fm=$("#f-model");[...fm.options].forEach((o,i)=>{if(o.text===label)fm.selectedIndex=i});
-  $("#f-size").value=custom?"":(size||"");
-  $("#f-type").selectedIndex=custom?1:0;
-  closeModal();$("#aloqa").scrollIntoView({behavior:"smooth"});
-}
-$("#m-order").onclick=()=>{if(!size){$("#m-hint").style.display="block";return}toForm(false)};
-$("#m-custom").onclick=()=>toForm(true);
-
-/* form */
-function buildMsg(){
-  const txt=`${t("msg_head")}
-${t("msg_name")}: ${$("#f-name").value.trim()}
-${t("ct_phone")}: ${$("#f-phone").value.trim()}
-${t("msg_model")}: ${$("#f-model").value||t("msg_none")}
-${t("msg_size")}: ${$("#f-size").value||t("msg_measure")}
-${t("msg_type")}: ${$("#f-type").value}
-${t("msg_note")}: ${$("#f-msg").value.trim()||"—"}`;
-  $("#result-text").textContent=txt;
-  $("#tg-link").href="https://t.me/share/url?url=&text="+encodeURIComponent(txt);
-}
-$("#form").addEventListener("submit",e=>{
-  e.preventDefault();
-  const ok=[$("#f-name"),$("#f-phone")].map(i=>{i.style.borderColor=i.value.trim()?"":"#c0563f";return !!i.value.trim()}).every(Boolean);
-  if(!ok)return;
-  buildMsg();$("#result").classList.add("show");$("#copy-btn").textContent=t("fm_copy");
-});
-$("#copy-btn").onclick=async()=>{
-  try{await navigator.clipboard.writeText($("#result-text").textContent);$("#copy-btn").textContent=t("fm_copied")}
-  catch(e){$("#copy-btn").textContent=t("fm_copy_fail")}
-};
-
-/* mobile menu */
-$("#burger").onclick=()=>{$("#burger").classList.toggle("open");$("#menu").classList.toggle("mobile")};
-document.querySelectorAll("#menu a").forEach(a=>a.addEventListener("click",()=>{$("#burger").classList.remove("open");$("#menu").classList.remove("mobile")}));
-
-/* reveal */
-const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
-
-applyLang();
-</script>
+<script src="assets/data.js?v=2"></script>
+<script src="assets/app.js?v=2"></script>
 </body>
 </html>
